@@ -220,9 +220,69 @@ if (edl) {
     warn("edl has b-roll segments but 05_broll/broll-design.json is missing — b-roll must be designed against the VO words (stage ⑥)");
 }
 
+// ---------- storyboard flow (docs/flow-storyboard.md) ----------
+const flowState = fs.existsSync(stateFile) ? (() => { try { return read(stateFile); } catch { return null; } })() : null;
+if (flowState?.flow === "storyboard") {
+  const sbFile = path.join(P, "02_storyboard/storyboard.json");
+  const sb = check(sbFile, "storyboard.schema.json");
+  const order = ["storyboard", "generate", "ingest", "scenes", "edit", "render", "done"];
+  if (!order.includes(flowState.stage)) err(`state.json: unknown storyboard-flow stage "${flowState.stage}" (expected ${order.join("|")})`);
+  const atLeast = (st) => order.indexOf(flowState.stage) >= order.indexOf(st);
+  const ex = (f) => fs.existsSync(path.join(P, f));
+  const nw = (w) => w.toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9]+/g, "");
+  if (sb) {
+    const ids = sb.clips.map((c) => c.id);
+    if (new Set(ids).size !== ids.length) err("storyboard: duplicate clip ids");
+    const names = new Map();
+    for (const c of sb.clips) {
+      const words = c.line.split(/\s+/).map(nw);
+      const budget = (gen.profile.duration_s?.max ?? 8) - 0.6;
+      if (words.length / 2.7 > budget) warn(`storyboard ${c.id}: ${words.length} words ≈ ${(words.length / 2.7).toFixed(1)} s of speech, budget ${budget.toFixed(1)} s — split the line`);
+      const refs = [...(c.edit?.host ?? []).map((h) => h[0]), ...(c.edit?.scenes ?? []).flatMap((x) => Object.values(x.cues ?? {}))];
+      for (const r of refs) {
+        if (typeof r !== "string" || r.startsWith("@")) continue;
+        const key = r.replace(/(#\d+)?([+-]\d*\.?\d+)?$/, "");
+        if (!words.includes(nw(key))) err(`storyboard ${c.id}: cue "${r}" — "${key}" is not in the line`);
+      }
+      for (const x of c.edit?.scenes ?? []) {
+        if (names.has(x.name) && names.get(x.name) !== x.layer) warn(`storyboard: scene ${x.name} used on different layers`);
+        names.set(x.name, x.layer);
+        if (!x.idea && x.name !== "LogoBug") warn(`storyboard ${c.id}: scene ${x.name} has no idea — the scene-builder needs one`);
+      }
+      const modes = (c.edit?.host ?? []).map((h) => h[1]);
+      if (!modes.length) warn(`storyboard ${c.id}: no host keyframes (defaults to full)`);
+    }
+    for (let i = 1; i < sb.clips.length; i++) {
+      const sig = (c) => `${(c.edit?.host ?? []).map((h) => h[1]).join(">")}|${(c.edit?.scenes ?? []).map((x) => x.layer).join(",")}`;
+      if (sig(sb.clips[i]) === sig(sb.clips[i - 1])) warn(`storyboard ${sb.clips[i].id}: same layout and scene layers as ${sb.clips[i - 1].id} — vary adjacent beats`);
+    }
+    if (!ex("02_storyboard/storyboard.md")) warn("02_storyboard/storyboard.md missing — the user approves the storyboard from it");
+    for (const c of sb.clips) if (!ex(`03_prompts/clip-${c.id}.prompt.md`)) warn(`03_prompts/clip-${c.id}.prompt.md missing — run tools/storyboard-prompts.mjs ${slug}`);
+    if (atLeast("scenes") || ex("05_ingest/ingest.json")) {
+      if (!ex("05_ingest/ingest.json")) err(`stage "${flowState.stage}" but 05_ingest/ingest.json is missing — run tools/ingest.py ${slug}`);
+      else {
+        const ing = read(path.join(P, "05_ingest/ingest.json"));
+        for (const m of ing.missing ?? []) err(`ingest: clip ${m} has no take`);
+        for (const c of ing.clips ?? []) if (c.similarity < 0.8) warn(`ingest ${c.id}: take ${c.take} similarity ${c.similarity} — check it says the line`);
+      }
+    }
+    const sceneDir = path.join(ROOT, "remotion/src/projects", slug);
+    if (atLeast("edit") || fs.existsSync(sceneDir)) {
+      const builtIn = new Set(["LogoBug"]);
+      for (const [n] of names) if (!builtIn.has(n) && !fs.existsSync(path.join(sceneDir, `${n}.tsx`))) err(`scene ${n}: remotion/src/projects/${slug}/${n}.tsx missing`);
+      const idx = path.join(ROOT, "remotion/src/projects/index.ts");
+      if (fs.existsSync(sceneDir) && !(fs.existsSync(idx) && fs.readFileSync(idx, "utf8").includes(`"${slug}"`))) err(`scenes for ${slug} not registered — run tools/register-scenes.mjs`);
+    }
+    if (atLeast("render") && !ex("06_edit/timeline.json")) err(`stage "${flowState.stage}" but 06_edit/timeline.json is missing`);
+    const renders = ex("renders") && fs.readdirSync(path.join(P, "renders")).some((f) => f.endsWith(".mp4"));
+    if (renders && !atLeast("render")) err(`state.json stage "${flowState.stage}" is stale: renders exist`);
+    if (atLeast("generate") && !flowState.approved?.storyboard) err(`stage "${flowState.stage}" but approved.storyboard is false — the storyboard gate was skipped`);
+  } else if (atLeast("generate")) err(`stage "${flowState.stage}" but 02_storyboard/storyboard.json is missing`);
+}
+
 // Stage vs artifacts — a stale state.json resumes the pipeline in the wrong place,
 // and the validator must tell "not reached yet" apart from "skipped".
-if (fs.existsSync(stateFile)) {
+if (fs.existsSync(stateFile) && flowState?.flow !== "storyboard") {
   try {
     const st = read(stateFile);
     const order = ["audit", "vision", "breakdown", "prompting", "review", "broll", "assembly", "done"];

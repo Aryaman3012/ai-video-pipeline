@@ -8,7 +8,21 @@ This file is the contract. Every agent (you, or a subagent in `.claude/agents/`)
 
 ---
 
-## The pipeline (never skip, never reorder)
+## Two flows — pick one at the start (`state.json → "flow"`)
+
+| Flow | Use it for | Guide |
+|---|---|---|
+| **`storyboard`** (default) | A person the generator makes speaks the script (podcast host/guest, presenter to camera); everything else is Remotion laid over, beside or under them. HeyAnaya Scripts 1–3. | [docs/flow-storyboard.md](docs/flow-storyboard.md) — agents `storyboarder` → (user generates) → `explainer-editor` ingest → `scene-builder` → `explainer-editor` edit/QC/render |
+| **`film`** | A narrated film: separate VO track, many generated shots and b-roll cards cut on the VO (`anaya-after-eight`). | the 7-stage pipeline below |
+
+In the storyboard flow the storyboarder **designs each video's visuals from its own script** — no
+fixed scene library. `docs/examples/` holds finished productions as a quality bar, not templates.
+The hard rules below apply to both flows where they make sense (vanilla clips, measured time,
+one voice, never overwrite, review with your own eyes, unify before you ship).
+
+---
+
+## The pipeline (never skip, never reorder) — film flow
 
 ```
  script.md
@@ -163,3 +177,12 @@ Each stage ends with a short hand-off note appended to `projects/<slug>/log.md`:
 - Next: scene-prompter → scene-001
 - Open questions: none
 ```
+
+## Starting a storyboard-flow project
+
+```bash
+./tools/new-project.sh my-video --flow storyboard
+# script → projects/my-video/00_script/script.md · cast still → 01_vision/refs/ · logos → 01_vision/brand/
+```
+Then `/produce my-video`, or run the agents in order: `storyboarder` → you generate the clips into
+`04_clips/` → `explainer-editor` (ingest) → `scene-builder` → `explainer-editor` (edit, QC, render).

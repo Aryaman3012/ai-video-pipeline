@@ -1,9 +1,10 @@
 {
   "slug": "__SLUG__",
-  "stage": "audit",
+  "flow": "__FLOW__",
+  "stage": "__STAGE__",
   "format": null,
   "current_scene": null,
   "current_take": null,
-  "approved": { "audit": false, "vision": false, "breakdown": false, "broll": false, "final": false },
+  "approved": { "storyboard": false, "audit": false, "vision": false, "breakdown": false, "broll": false, "final": false },
   "updated_at": "__NOW__"
 }

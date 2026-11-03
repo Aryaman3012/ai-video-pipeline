@@ -10,7 +10,18 @@ Produce the video for project `$ARGUMENTS` following `AGENTS.md`.
 2. Read `projects/$ARGUMENTS/state.json` and the last entry of `log.md`. Resume from `stage`.
    If the validator reports the stage is stale against the artifacts on disk, reconcile
    `state.json` with the user before dispatching anything.
-3. Dispatch by stage:
+3. If `state.json.flow` is `"storyboard"`, dispatch by stage per `docs/flow-storyboard.md`:
+   - `storyboard` → `storyboarder` subagent. Show `02_storyboard/storyboard.md` and
+     `03_prompts/ALL-PROMPTS.md`; wait for approval (`approved.storyboard`), then `stage: generate`.
+   - `generate` → tell the user which prompts to paste and where to save clips (`04_clips/`).
+     Stop until clips exist, then `stage: ingest`.
+   - `ingest` → `explainer-editor` (ingest). Show the match/trim report; `stage: scenes`.
+   - `scenes` → `scene-builder` subagent (implements every storyboard scene, tsc clean); `stage: edit`.
+   - `edit` → `explainer-editor` (timeline + stills QC, loop with `scene-builder` until both sheets
+     are clean). Show the sheets; on approval `stage: render`.
+   - `render` → `explainer-editor` (render both aspects, master, speed variants on request);
+     iterate on the user's notes until sign-off (`approved.final`), then `stage: done`.
+   Otherwise (film flow) dispatch by stage:
    - `audit` → `script-auditor` subagent (locks format first if `state.json.format` is empty).
      The format lock includes the **generator**: ask the user `runway` | `veo` | `other` and the
      model (e.g. "Veo 3.1 Fast"), and record `format.generator: {name, model}`.
