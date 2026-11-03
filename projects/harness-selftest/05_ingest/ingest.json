@@ -1,0 +1,78 @@
+{
+ "slug": "harness-selftest",
+ "model": "small.en",
+ "clips": [
+  {
+   "id": "01",
+   "take": "Man_speaking_in_clinic_lounge_d1151a30.mp4",
+   "similarity": 1.0,
+   "heard": "A few unanswered WhatsApp enquiries don't seem like a big deal. Now multiply that across all your clinic locations.",
+   "override": null,
+   "trim": {
+    "start": 0.28,
+    "end": 7.63
+   },
+   "duration_s": 7.35,
+   "crop": {
+    "h": 720,
+    "w": 1080,
+    "x": 100,
+    "y": 0
+   },
+   "audio": true,
+   "src": "projects/harness-selftest/clips/01.mp4"
+  },
+  {
+   "id": "02",
+   "take": "Man_speaking_in_clinic_lounge_98f359da.mp4[0.35-2.6] + Man_speaking_in_clinic_lounge_98f359da.mp4[2.9-7.45]",
+   "similarity": 1.0,
+   "heard": "One at your first clinic. Another at your second. And more across the rest of your network.",
+   "override": {
+    "stitch": [
+     {
+      "file": "Man_speaking_in_clinic_lounge_98f359da.mp4",
+      "in": 0.35,
+      "out": 2.6
+     },
+     {
+      "file": "Man_speaking_in_clinic_lounge_98f359da.mp4",
+      "in": 2.9,
+      "out": 7.45
+     }
+    ]
+   },
+   "trim": {
+    "start": 0.0,
+    "end": 6.8
+   },
+   "duration_s": 6.8,
+   "crop": {
+    "h": 720,
+    "w": 1080,
+    "x": 100,
+    "y": 0
+   },
+   "audio": true,
+   "src": "projects/harness-selftest/clips/02.mp4"
+  }
+ ],
+ "broll": [
+  {
+   "id": "b01",
+   "take": "broll-b01_take-01.mp4",
+   "duration_s": 5.28,
+   "crop": null,
+   "size": {
+    "w": 1280,
+    "h": 720
+   },
+   "src": "projects/harness-selftest/clips/b01.mp4"
+  }
+ ],
+ "missing": [],
+ "unused_takes": [],
+ "source": {
+  "w": 1080,
+  "h": 720
+ }
+}

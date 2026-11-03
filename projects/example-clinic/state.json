@@ -7,5 +7,9 @@
     "vision": true,
     "breakdown": true
   },
-  "updated_at": "2026-09-16T11:00:00+05:30"
+  "updated_at": "2026-09-16T11:00:00+05:30",
+  "waivers": {
+    "vision": "Sample project with placeholder clips and no VO.",
+    "broll": "Sample project; b-roll props are illustrative."
+  }
 }

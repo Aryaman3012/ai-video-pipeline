@@ -1,0 +1,310 @@
+{
+ "slug": "harness-selftest",
+ "version": 1,
+ "fps": 24,
+ "source": {
+  "w": 1080,
+  "h": 720
+ },
+ "framing": {
+  "face_x": 0.5,
+  "face_y": 0.28,
+  "body_y": 0.4
+ },
+ "brand": {
+  "name": "HeyAnaya",
+  "logo_light": "projects/harness-selftest/brand/logo-white.png",
+  "logo_dark": "projects/harness-selftest/brand/logo-black.png"
+ },
+ "end_card": {
+  "seconds": 2,
+  "headline": "Self-test",
+  "cta": "Book a demo"
+ },
+ "captions": {
+  "landscape": true,
+  "vertical": true
+ },
+ "beats": [
+  {
+   "id": "01",
+   "src": "projects/harness-selftest/clips/01.mp4",
+   "dur": 7.35,
+   "host": [
+    [
+     0,
+     "full"
+    ],
+    [
+     1.1,
+     "pip"
+    ]
+   ],
+   "grade": "cool",
+   "captions": [
+    [
+     {
+      "w": "A",
+      "s": 0,
+      "e": 0.28
+     },
+     {
+      "w": "few",
+      "s": 0.28,
+      "e": 0.48
+     },
+     {
+      "w": "unanswered",
+      "s": 0.48,
+      "e": 1.1,
+      "k": "neg"
+     },
+     {
+      "w": "WhatsApp",
+      "s": 1.1,
+      "e": 1.38
+     }
+    ],
+    [
+     {
+      "w": "enquiries",
+      "s": 1.38,
+      "e": 2.1
+     },
+     {
+      "w": "don't",
+      "s": 2.1,
+      "e": 2.54
+     },
+     {
+      "w": "seem",
+      "s": 2.54,
+      "e": 2.72
+     },
+     {
+      "w": "like",
+      "s": 2.72,
+      "e": 2.9
+     }
+    ],
+    [
+     {
+      "w": "a",
+      "s": 2.9,
+      "e": 3.02
+     },
+     {
+      "w": "big",
+      "s": 3.02,
+      "e": 3.16
+     },
+     {
+      "w": "deal.",
+      "s": 3.16,
+      "e": 3.48
+     }
+    ],
+    [
+     {
+      "w": "Now",
+      "s": 4.24,
+      "e": 4.26
+     },
+     {
+      "w": "multiply",
+      "s": 4.26,
+      "e": 4.66
+     },
+     {
+      "w": "that",
+      "s": 4.66,
+      "e": 5.12
+     },
+     {
+      "w": "across",
+      "s": 5.12,
+      "e": 5.52
+     }
+    ],
+    [
+     {
+      "w": "all",
+      "s": 5.52,
+      "e": 5.98
+     },
+     {
+      "w": "your",
+      "s": 5.98,
+      "e": 6.2
+     },
+     {
+      "w": "clinic",
+      "s": 6.2,
+      "e": 6.5
+     },
+     {
+      "w": "locations.",
+      "s": 6.5,
+      "e": 7
+     }
+    ]
+   ],
+   "scenes": [
+    {
+     "name": "Footage",
+     "layer": "under",
+     "props": {
+      "clip": "b01",
+      "src": "projects/harness-selftest/clips/b01.mp4",
+      "size": {
+       "w": 1280,
+       "h": 720
+      },
+      "duration_s": 5.28
+     },
+     "cues": {
+      "in": 1.1
+     }
+    },
+    {
+     "name": "LogoBug",
+     "layer": "over",
+     "cues": {
+      "in": 0,
+      "out": 3.16
+     }
+    }
+   ]
+  },
+  {
+   "id": "02",
+   "src": "projects/harness-selftest/clips/02.mp4",
+   "dur": 6.8,
+   "host": [
+    [
+     0,
+     "split"
+    ]
+   ],
+   "framing": {
+    "face_x": 0.55,
+    "face_y": 0.28,
+    "body_y": 0.4
+   },
+   "grade": "neutral",
+   "captions": [
+    [
+     {
+      "w": "One",
+      "s": 0.18,
+      "e": 0.48
+     },
+     {
+      "w": "at",
+      "s": 0.48,
+      "e": 0.96
+     },
+     {
+      "w": "your",
+      "s": 0.96,
+      "e": 1.14
+     },
+     {
+      "w": "first",
+      "s": 1.14,
+      "e": 1.36
+     }
+    ],
+    [
+     {
+      "w": "clinic.",
+      "s": 1.36,
+      "e": 1.66
+     },
+     {
+      "w": "Another",
+      "s": 2.38,
+      "e": 2.8
+     },
+     {
+      "w": "at",
+      "s": 2.8,
+      "e": 3.2
+     },
+     {
+      "w": "your",
+      "s": 3.2,
+      "e": 3.34
+     }
+    ],
+    [
+     {
+      "w": "second.",
+      "s": 3.34,
+      "e": 3.62
+     },
+     {
+      "w": "And",
+      "s": 4.44,
+      "e": 4.8
+     },
+     {
+      "w": "more",
+      "s": 4.8,
+      "e": 5.12
+     },
+     {
+      "w": "across",
+      "s": 5.12,
+      "e": 5.6
+     }
+    ],
+    [
+     {
+      "w": "the",
+      "s": 5.6,
+      "e": 5.8
+     },
+     {
+      "w": "rest",
+      "s": 5.8,
+      "e": 5.88
+     },
+     {
+      "w": "of",
+      "s": 5.88,
+      "e": 6.1
+     },
+     {
+      "w": "your",
+      "s": 6.1,
+      "e": 6.22
+     },
+     {
+      "w": "network.",
+      "s": 6.22,
+      "e": 6.42
+     }
+    ]
+   ],
+   "scenes": [
+    {
+     "name": "Footage",
+     "layer": "beside",
+     "props": {
+      "clip": "b01",
+      "fit": "cover",
+      "radius": 24,
+      "src": "projects/harness-selftest/clips/b01.mp4",
+      "size": {
+       "w": 1280,
+       "h": 720
+      },
+      "duration_s": 5.28
+     },
+     "cues": {}
+    }
+   ]
+  }
+ ]
+}

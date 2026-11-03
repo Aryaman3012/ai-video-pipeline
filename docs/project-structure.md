@@ -20,7 +20,10 @@ ai-video-pipeline/
 │   ├── vision-board.md
 │   └── prompts/               ← one prompt template per view + generator profiles
 ├── tools/                     ← new-project, probe, frames, sync, render-prompt, validate
-├── remotion/                  ← renders the EDL (A-roll + B-roll + audio)
+├── remotion/                  ← film flow: renders the EDL · storyboard flow: Explainer16x9/9x16
+│   └── src/
+│       ├── explainer/         ← storyboard-flow engine: host layouts, captions, end card, primitives
+│       └── projects/<slug>/   ← that video's scenes (scene-builder), registered in projects/index.ts
 └── projects/
     ├── _template/             ← copied by tools/new-project.sh
     └── <slug>/
@@ -35,7 +38,10 @@ ai-video-pipeline/
         ├── 04_clips/          scene-XXX_take-NN.mp4
         ├── 05_review/         scene-XXX.review.json, frames/
         ├── 05_broll/          broll-design.json, storyboard.md
-        ├── 06_edit/           edl.json
+        ├── 02_storyboard/     storyboard.json, storyboard.md            (storyboard flow)
+        ├── 05_ingest/         ingest.json, words/NN.json, overrides.json (storyboard flow)
+        ├── 05_review/stills/  QC stills + sheet_16x9.jpg, sheet_9x16.jpg   (storyboard flow)
+        ├── 06_edit/           edl.json (film) · timeline.json (storyboard)
         └── renders/           <slug>_vNN.mp4
 ```
 
@@ -54,7 +60,11 @@ ai-video-pipeline/
 }
 ```
 
-`stage` ∈ `audit | vision | breakdown | prompting | review | broll | assembly | done`.
+`flow` ∈ `storyboard | film` (absent = film).
+`stage` (film) ∈ `audit | vision | breakdown | prompting | review | broll | assembly | done`;
+`stage` (storyboard) ∈ `storyboard | generate | ingest | scenes | edit | render | done`.
+`waivers` (optional) — `{ "<stage>": "<reason>" }`: the only way past a skipped stage; the
+validator errors otherwise.
 `format.generator.name` ∈ `runway | veo | other` ([generators.md](generators.md)); absent means
 `runway`. It must match `vision-board.json → format.generator`.
 Any agent resuming work reads `state.json` first, then the last entry in `log.md`.

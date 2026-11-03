@@ -10,9 +10,10 @@ export type Rect = { x: number; y: number; w: number; h: number };
  * Where the host sits in each mode, and the free panel beside (16:9) or below (9:16) him in split.
  * Everything a scene places in `beside` must fit `panel`; in 16:9 the bottom 150u stays clear for captions.
  */
-export const useGeometry = () => {
+export const useGeometry = (beatFraming?: Beat["framing"]) => {
   const { width: W, height: H, vertical, u } = useLayout();
-  const { framing } = useTimeline();
+  const tl = useTimeline();
+  const framing = beatFraming ?? tl.framing;
   const pipD = (vertical ? 250 : 290) * u;
   const face = { fx: framing.face_x, fy: framing.face_y };
   const body = { fx: framing.face_x, fy: framing.body_y };
@@ -67,7 +68,7 @@ export const Host: React.FC<{ beat: Beat }> = ({ beat }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const { source } = useTimeline();
-  const { shots } = useGeometry();
+  const { shots } = useGeometry(beat.framing);
   const [a, b, p] = hostState(beat, frame, fps);
   const s = mix(shots[a], shots[b], p);
   const fullness = (a === "full" ? 1 - p : 0) + (b === "full" ? p : 0);

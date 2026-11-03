@@ -216,8 +216,7 @@ if (edl) {
   for (const a of edl.audio ?? []) if (!fs.existsSync(path.join(pub, a.src))) warn(`edl audio ${a.src} not in remotion/public`);
   const total = edl.segments.reduce((t, s) => t + s.duration_s, 0);
   console.log(`  i EDL runtime ${total.toFixed(2)} s, ${edl.segments.length} segments`);
-  if (edl.segments.some((s) => s.kind === "broll") && !design)
-    warn("edl has b-roll segments but 05_broll/broll-design.json is missing — b-roll must be designed against the VO words (stage ⑥)");
+
 }
 
 // ---------- storyboard flow (docs/flow-storyboard.md) ----------
@@ -245,9 +244,10 @@ if (flowState?.flow === "storyboard") {
         if (!words.includes(nw(key))) err(`storyboard ${c.id}: cue "${r}" — "${key}" is not in the line`);
       }
       for (const x of c.edit?.scenes ?? []) {
-        if (names.has(x.name) && names.get(x.name) !== x.layer) warn(`storyboard: scene ${x.name} used on different layers`);
+        if (names.has(x.name) && names.get(x.name) !== x.layer && !["LogoBug", "Footage"].includes(x.name)) warn(`storyboard: scene ${x.name} used on different layers`);
         names.set(x.name, x.layer);
-        if (!x.idea && x.name !== "LogoBug") warn(`storyboard ${c.id}: scene ${x.name} has no idea — the scene-builder needs one`);
+        if (x.name === "Footage" && !(sb.broll ?? []).some((b) => b.id === x.props?.clip)) err(`storyboard ${c.id}: Footage clip "${x.props?.clip}" is not in storyboard.broll`);
+        if (!x.idea && !["LogoBug", "Footage"].includes(x.name)) warn(`storyboard ${c.id}: scene ${x.name} has no idea — the scene-builder needs one`);
       }
       const modes = (c.edit?.host ?? []).map((h) => h[1]);
       if (!modes.length) warn(`storyboard ${c.id}: no host keyframes (defaults to full)`);
@@ -268,12 +268,33 @@ if (flowState?.flow === "storyboard") {
     }
     const sceneDir = path.join(ROOT, "remotion/src/projects", slug);
     if (atLeast("edit") || fs.existsSync(sceneDir)) {
-      const builtIn = new Set(["LogoBug"]);
+      const builtIn = new Set(["LogoBug", "Footage"]);
       for (const [n] of names) if (!builtIn.has(n) && !fs.existsSync(path.join(sceneDir, `${n}.tsx`))) err(`scene ${n}: remotion/src/projects/${slug}/${n}.tsx missing`);
       const idx = path.join(ROOT, "remotion/src/projects/index.ts");
       if (fs.existsSync(sceneDir) && !(fs.existsSync(idx) && fs.readFileSync(idx, "utf8").includes(`"${slug}"`))) err(`scenes for ${slug} not registered — run tools/register-scenes.mjs`);
     }
     if (atLeast("render") && !ex("06_edit/timeline.json")) err(`stage "${flowState.stage}" but 06_edit/timeline.json is missing`);
+    const idxFile = path.join(sceneDir, "index.tsx");
+    if (fs.existsSync(idxFile)) {
+      const src = fs.readFileSync(idxFile, "utf8");
+      const block = src.slice(src.indexOf("SCENES"));
+      for (const [n] of names) if (!["LogoBug", "Footage"].includes(n) && !new RegExp(`\\b${n}\\b`).test(block)) err(`scene ${n}: not exported in remotion/src/projects/${slug}/index.tsx SCENES`);
+    }
+    const tlFile = path.join(P, "06_edit/timeline.json");
+    if (fs.existsSync(tlFile)) {
+      const tl = read(tlFile);
+      const pub = path.join(ROOT, "remotion/public");
+      if (!tl.source?.w || !tl.source?.h) err("timeline: source size missing — re-run ingest");
+      for (const b of tl.beats ?? []) {
+        if (!fs.existsSync(path.join(pub, b.src))) err(`timeline ${b.id}: ${b.src} not in remotion/public — re-run ingest`);
+        if (!b.host?.length) err(`timeline ${b.id}: no host keyframes`);
+        for (const [t] of b.host ?? []) if (t > b.dur + 0.01) err(`timeline ${b.id}: host keyframe at ${t}s is past the clip (${b.dur}s)`);
+        for (const sc of b.scenes ?? []) for (const [k, t] of Object.entries(sc.cues ?? {})) if (t > b.dur + 0.01) warn(`timeline ${b.id} ${sc.name}.${k}: ${t}s is past the clip (${b.dur}s)`);
+        for (const sc of b.scenes ?? []) if (sc.name === "Footage" && !(sc.props?.src && fs.existsSync(path.join(pub, sc.props.src)))) err(`timeline ${b.id}: Footage clip missing — ingest the b-roll`);
+      }
+      const sbMtime = fs.statSync(sbFile).mtimeMs, tlMtime = fs.statSync(tlFile).mtimeMs;
+      if (sbMtime > tlMtime) warn("timeline is older than the storyboard — run tools/build-timeline.mjs");
+    }
     const renders = ex("renders") && fs.readdirSync(path.join(P, "renders")).some((f) => f.endsWith(".mp4"));
     if (renders && !atLeast("render")) err(`state.json stage "${flowState.stage}" is stale: renders exist`);
     if (atLeast("generate") && !flowState.approved?.storyboard) err(`stage "${flowState.stage}" but approved.storyboard is false — the storyboard gate was skipped`);
@@ -294,8 +315,12 @@ if (fs.existsSync(stateFile) && flowState?.flow !== "storyboard") {
     else if (design && !atLeast("broll")) warn(`state.json stage "${st.stage}" is stale: broll-design.json exists`);
     else if (bd && !atLeast("breakdown")) warn(`state.json stage "${st.stage}" is stale: breakdown.json exists`);
     else if (vision && !atLeast("vision")) warn(`state.json stage "${st.stage}" is stale: vision-board.json exists`);
-    if (atLeast("breakdown") && st.stage !== "done" && !words)
-      warn(`state.json stage "${st.stage}" but vo.words.json is missing — the VO lock (stage ②) was skipped`);
+    // Hard gates: a skipped stage is an error unless state.json.waivers names the stage with a reason.
+    const waived = (stage) => typeof st.waivers?.[stage] === "string" && st.waivers[stage].trim().length > 0;
+    const gate = (stage, msg) => (waived(stage) ? console.log(`  i ${msg} — waived: ${st.waivers[stage]}`) : err(`${msg} (or add state.json waivers.${stage}: "<reason>")`));
+    if (atLeast("breakdown") && st.stage !== "done" && !words) gate("vision", `state.json stage "${st.stage}" but vo.words.json is missing — the VO lock (stage ②) was skipped`);
+    if (atLeast("assembly") && edl?.segments?.some((x) => x.kind === "broll") && !design) gate("broll", `stage "${st.stage}" but 05_broll/broll-design.json is missing — b-roll was not designed against the VO (stage ⑥)`);
+    for (const k of ["vision", "breakdown"]) if (atLeast(order[order.indexOf(k) + 1]) && st.approved?.[k] === false && !waived(k)) warn(`approved.${k} is false but the pipeline is past ${k}`);
   } catch (e) { err(`state.json: invalid JSON (${e.message})`); }
 }
 

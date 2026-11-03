@@ -20,5 +20,8 @@
     "broll": false,
     "final": false
   },
-  "updated_at": "2026-11-04T00:39:24+0530"
+  "updated_at": "2026-11-04T00:39:24+0530",
+  "waivers": {
+    "vision": "Prompt-template test project: VO comes from the Veo clips themselves; no clips generated yet."
+  }
 }

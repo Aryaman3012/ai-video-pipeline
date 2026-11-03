@@ -1,5 +1,5 @@
 {
-  "$comment": "Generator profiles. The rules stage ④ and tools/validate.mjs enforce come from here, keyed by state.json → format.generator.name. Override any field per project by adding it next to name/model in format.generator. Re-verify a profile when its model version changes.",
+  "$comment": "Generator profiles. The rules stage \u2463 and tools/validate.mjs enforce come from here, keyed by state.json \u2192 format.generator.name. Override any field per project by adding it next to name/model in format.generator. Re-verify a profile when its model version changes.",
   "runway": {
     "label": "Runway",
     "default_model": "gen4.5",
@@ -7,15 +7,31 @@
     "generation": "api_or_human",
     "render_as": "runway",
     "negative_phrasing": false,
-    "duration_s": { "min": 2, "max": 10 },
-    "fps": [24, 25],
-    "t2v_aspects": ["16:9"],
-    "i2v_aspects": ["16:9", "9:16", "1:1", "4:3", "3:4", "21:9"],
+    "duration_s": {
+      "min": 2,
+      "max": 10
+    },
+    "fps": [
+      24,
+      25
+    ],
+    "t2v_aspects": [
+      "16:9"
+    ],
+    "i2v_aspects": [
+      "16:9",
+      "9:16",
+      "1:1",
+      "4:3",
+      "3:4",
+      "21:9"
+    ],
     "prompt_max_chars": 1000,
     "audio": false,
     "dialogue": false,
     "first_frame_for_cast": false,
-    "speech": null
+    "speech": null,
+    "api_model": "gen4_turbo"
   },
   "veo": {
     "label": "Google Veo (in Flow)",
@@ -24,15 +40,30 @@
     "generation": "manual",
     "render_as": "veo",
     "negative_phrasing": true,
-    "duration_s": { "min": 8, "max": 8 },
-    "fps": [24],
-    "t2v_aspects": ["16:9", "9:16"],
-    "i2v_aspects": ["16:9", "9:16"],
+    "duration_s": {
+      "min": 8,
+      "max": 8
+    },
+    "fps": [
+      24
+    ],
+    "t2v_aspects": [
+      "16:9",
+      "9:16"
+    ],
+    "i2v_aspects": [
+      "16:9",
+      "9:16"
+    ],
     "prompt_max_chars": 4000,
     "audio": true,
     "dialogue": true,
     "first_frame_for_cast": true,
-    "speech": { "words_per_s": 2.7, "max_speech_end_s": 7.8, "head_silence_s": 0.4 }
+    "speech": {
+      "words_per_s": 2.7,
+      "max_speech_end_s": 7.8,
+      "head_silence_s": 0.4
+    }
   },
   "other": {
     "label": "Other generator (manual)",
@@ -41,14 +72,39 @@
     "generation": "manual",
     "render_as": "veo",
     "negative_phrasing": true,
-    "duration_s": { "min": 1, "max": 60 },
-    "fps": [24, 25, 30],
-    "t2v_aspects": ["16:9", "9:16", "1:1", "4:3", "3:4", "21:9"],
-    "i2v_aspects": ["16:9", "9:16", "1:1", "4:3", "3:4", "21:9"],
+    "duration_s": {
+      "min": 1,
+      "max": 60
+    },
+    "fps": [
+      24,
+      25,
+      30
+    ],
+    "t2v_aspects": [
+      "16:9",
+      "9:16",
+      "1:1",
+      "4:3",
+      "3:4",
+      "21:9"
+    ],
+    "i2v_aspects": [
+      "16:9",
+      "9:16",
+      "1:1",
+      "4:3",
+      "3:4",
+      "21:9"
+    ],
     "prompt_max_chars": 4000,
     "audio": true,
     "dialogue": true,
     "first_frame_for_cast": true,
-    "speech": { "words_per_s": 2.7, "max_speech_end_s": null, "head_silence_s": 0 }
+    "speech": {
+      "words_per_s": 2.7,
+      "max_speech_end_s": null,
+      "head_silence_s": 0
+    }
   }
 }

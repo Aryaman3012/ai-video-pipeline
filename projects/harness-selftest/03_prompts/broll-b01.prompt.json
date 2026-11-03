@@ -1,0 +1,32 @@
+{
+  "scene_id": "broll-b01",
+  "intent": "Test pattern standing in for an aerial shot",
+  "view": "broll-silent.location",
+  "generator": "veo",
+  "continuity_inputs": [],
+  "acceptance_criteria": [
+    "Matches the purpose and the vision board's look",
+    "Readable text, logos and UI absent",
+    "Usable motion through at least 5 s"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "slots": {
+        "location": "LOC_STUDIO_HOST",
+        "action": "a slow, steady drift across the empty studio"
+      },
+      "duration_s": 8,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "generated_at": null,
+      "model": "Veo 3.1 Fast",
+      "mode": "text_to_video",
+      "prompt": "Model: Veo 3.1 Fast. Duration: 8 seconds.\n\nMedium-wide shot of a warm, dark podcast studio with a studio mic, a mug and a table. a slow, steady drift across the empty studio\nCamera: locked-off, shallow depth of field, cinematic commercial look, 16:9.\n\nAudio: quiet clinic ambience. No dialogue, no voiceover, no music. Nobody on screen speaks or moves their lips.\nAvoid: readable text, logos, people, subtitles, warped screen.",
+      "keyframe": null,
+      "output_path": "04_clips/broll-b01_take-01.mp4"
+    }
+  ]
+}

@@ -51,7 +51,35 @@ for (const c of sb.clips) {
   index.push(`## ${c.id} · ${c.section ?? ""}\n\n> ${c.line}\n\n\`\`\`text\n${out.text}\n\`\`\`\n`);
   console.log(`✓ ${id} · ${c.view} · ${out.mode}${out.warnings.length ? `  (${out.warnings.join("; ")})` : ""}`);
 }
+// First-frame stills (image prompts) — made before any clip
+const pre = [];
+for (const k of sb.keyframes ?? []) {
+  try {
+    const r = renderPrompt({ view: k.view ?? "keyframe-still", generator: gen, slots: k.prompt ?? {}, vision, duration_s, aspect });
+    pre.push(`## Still ${k.id} → save as \`${k.output}\`\n\n\`\`\`text\n${r.text}\n\`\`\`\n`);
+    console.log(`✓ still ${k.id} · ${k.view ?? "keyframe-still"}`);
+  } catch (e) { bad++; console.log(`✗ still ${k.id}: ${e.message}`); }
+}
+// Silent generated b-roll — used under/beside the host by the built-in Footage scene
+const broll = [];
+for (const b of sb.broll ?? []) {
+  const id = `broll-${b.id}`;
+  let out;
+  try { out = renderPrompt({ view: b.view, generator: gen, slots: b.prompt ?? {}, vision, duration_s, aspect }); }
+  catch (e) { bad++; console.log(`✗ ${id}: ${e.message}`); continue; }
+  const take = { take: 1, slots: b.prompt ?? {}, duration_s, aspect_ratio: aspect, fps: sb.fps ?? 24, seed: null, prompt_delta_applied: null, generated_at: null,
+    model: gen.model, mode: out.mode, prompt: out.text, keyframe: out.keyframe, output_path: `04_clips/${id}_take-01.mp4` };
+  const p = { scene_id: id, intent: b.purpose ?? "Silent b-roll", view: b.view, generator: gen.name, continuity_inputs: out.keyframe ? [out.keyframe] : [],
+    acceptance_criteria: ["Matches the purpose and the vision board's look", "Readable text, logos and UI absent", "Usable motion through at least 5 s"], takes: [take] };
+  fs.writeFileSync(path.join(P, `03_prompts/${id}.prompt.json`), JSON.stringify(p, null, 2) + "\n");
+  fs.writeFileSync(path.join(P, `03_prompts/${id}.prompt.md`), promptMarkdown({ p, take, generator: gen }));
+  broll.push(`## ${b.id} · silent b-roll — save as \`04_clips/${id}….mp4\`\n\n> ${b.purpose ?? ""}\n\n\`\`\`text\n${out.text}\n\`\`\`\n`);
+  console.log(`✓ ${id} · ${b.view} · ${out.mode}`);
+}
 fs.writeFileSync(path.join(P, "03_prompts/ALL-PROMPTS.md"),
-  `# ${slug} — prompts (${gen.model})\n\nFirst frame for every clip: the cast still in \`01_vision/refs/\`. Save clips into \`04_clips/\` (any name).\n\n${index.join("\n")}`);
+  `# ${slug} — prompts (${gen.model})\n\n` +
+  (pre.length ? `# 1. First-frame stills (make these first)\n\n${pre.join("\n")}\n# 2. Speaking clips\n\n` : "") +
+  `First frame for every clip: the cast still in \`01_vision/refs/\`. Save clips into \`04_clips/\` (any name).\n\n${index.join("\n")}` +
+  (broll.length ? `\n# ${pre.length ? 3 : 2}. Silent b-roll\n\nName each file \`broll-bNN…\` so ingest can find it.\n\n${broll.join("\n")}` : ""));
 console.log(`→ 03_prompts/ALL-PROMPTS.md`);
 process.exit(bad ? 1 : 0);

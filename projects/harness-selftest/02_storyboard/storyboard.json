@@ -1,0 +1,176 @@
+{
+ "slug": "harness-selftest",
+ "fps": 24,
+ "generator": "veo",
+ "brand": {
+  "name": "HeyAnaya",
+  "logo_light": "logo-white.png",
+  "logo_dark": "logo-black.png"
+ },
+ "captions": {
+  "landscape": true,
+  "vertical": true,
+  "emphasis": {
+   "neg": [
+    "unanswered"
+   ]
+  }
+ },
+ "end_card": {
+  "seconds": 2,
+  "headline": "Self-test",
+  "cta": "Book a demo"
+ },
+ "keyframes": [
+  {
+   "id": "host",
+   "view": "keyframe-still",
+   "prompt": {
+    "cast": "CHAR_HOST",
+    "location": "LOC_STUDIO_HOST"
+   },
+   "output": "01_vision/refs/host_still.png"
+  }
+ ],
+ "broll": [
+  {
+   "id": "b01",
+   "view": "broll-silent.location",
+   "purpose": "Test pattern standing in for an aerial shot",
+   "prompt": {
+    "location": "LOC_STUDIO_HOST",
+    "action": "a slow, steady drift across the empty studio"
+   }
+  }
+ ],
+ "clips": [
+  {
+   "id": "01",
+   "section": "Hook",
+   "view": "podcast-host",
+   "line": "A few unanswered WhatsApp enquiries don't seem like a big deal. Now multiply that across all your clinic locations.",
+   "prompt": {
+    "cast": "CHAR_HOST",
+    "location": "LOC_STUDIO_HOST",
+    "line": [
+     {
+      "from": 0.0,
+      "to": 0.4,
+      "silence": true
+     },
+     {
+      "from": 0.4,
+      "to": 4.5,
+      "say": "A few unanswered WhatsApp enquiries don't seem like a big deal."
+     },
+     {
+      "from": 4.6,
+      "to": 7.7,
+      "say": "Now multiply that across all your clinic locations."
+     },
+     {
+      "from": 7.7,
+      "to": 8.0,
+      "pause": true
+     }
+    ],
+    "delivery": "Easy and conversational, slightly wry on \"don't seem like a big deal\", then leaning in with weight on \"multiply\".",
+    "gesture": "on \"WhatsApp\" he turns one open palm toward frame right; on \"multiply\" he spreads both hands apart above the table."
+   },
+   "edit": {
+    "host": [
+     [
+      "@start",
+      "full"
+     ],
+     [
+      "WhatsApp",
+      "pip"
+     ]
+    ],
+    "grade": "cool",
+    "scenes": [
+     {
+      "name": "Footage",
+      "layer": "under",
+      "props": {
+       "clip": "b01"
+      },
+      "cues": {
+       "in": "WhatsApp"
+      }
+     },
+     {
+      "name": "LogoBug",
+      "layer": "over",
+      "cues": {
+       "in": "@start",
+       "out": "deal"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "02",
+   "section": "Build the problem",
+   "view": "podcast-host",
+   "line": "One at your first clinic. Another at your second. And more across the rest of your network.",
+   "prompt": {
+    "cast": "CHAR_HOST",
+    "location": "LOC_STUDIO_HOST",
+    "line": [
+     {
+      "from": 0.0,
+      "to": 0.4,
+      "silence": true
+     },
+     {
+      "from": 0.4,
+      "to": 2.4,
+      "say": "One at your first clinic."
+     },
+     {
+      "from": 2.5,
+      "to": 4.1,
+      "say": "Another at your second."
+     },
+     {
+      "from": 4.2,
+      "to": 7.2,
+      "say": "And more across the rest of your network."
+     },
+     {
+      "from": 7.2,
+      "to": 8.0,
+      "pause": true
+     }
+    ],
+    "delivery": "Counting off, unhurried, a small beat between each clinic, building on \"the rest of your network\".",
+    "gesture": "on \"first\" he places one hand on the table, on \"second\" a little further along it, and on \"network\" he sweeps that hand wide across the table."
+   },
+   "edit": {
+    "host": [
+     [
+      "@start",
+      "split"
+     ]
+    ],
+    "framing": {
+     "face_x": 0.55
+    },
+    "scenes": [
+     {
+      "name": "Footage",
+      "layer": "beside",
+      "props": {
+       "clip": "b01",
+       "fit": "cover",
+       "radius": 24
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

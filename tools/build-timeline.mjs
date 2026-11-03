@@ -62,6 +62,7 @@ const chunk = (words) => {
   return chunks;
 };
 
+const timelineFraming = () => ({ face_x: 0.5, face_y: 0.28, body_y: 0.4, ...(sb.framing ?? {}) });
 const beats = [];
 for (const c of sb.clips) {
   const got = ing.clips.find((x) => x.id === c.id);
@@ -69,12 +70,18 @@ for (const c of sb.clips) {
   const { words, duration_s: dur } = read(`05_ingest/words/${c.id}.json`);
   const e = c.edit ?? {};
   const host = (e.host ?? [["@start", "full"]]).map(([r, mode], i) => [resolve(r, words, dur, `${c.id} host[${i}]`), mode]);
-  const scenes = (e.scenes ?? []).map((s) => ({
-    name: s.name,
-    layer: s.layer,
-    ...(s.props ? { props: s.props } : {}),
-    cues: Object.fromEntries(Object.entries(s.cues ?? {}).map(([k, r]) => [k, resolve(r, words, dur, `${c.id} ${s.name}.${k}`)])),
-  }));
+  const scenes = (e.scenes ?? []).map((s) => {
+    let props = s.props;
+    if (s.name === "Footage") { // built-in: silent generated b-roll, referenced by its storyboard id
+      const b = (ing.broll ?? []).find((x) => x.id === s.props?.clip);
+      if (!b) fail(`${c.id} Footage: b-roll "${s.props?.clip}" not ingested`);
+      else props = { ...s.props, src: b.src, size: b.size, duration_s: b.duration_s };
+    }
+    return { name: s.name, layer: s.layer, ...(props ? { props } : {}), cues: resolveCues(s) };
+  });
+  function resolveCues(s) {
+    return Object.fromEntries(Object.entries(s.cues ?? {}).map(([k, r]) => [k, resolve(r, words, dur, `${c.id} ${s.name}.${k}`)]));
+  }
   beats.push({
     id: c.id,
     src: got.src,
@@ -82,6 +89,7 @@ for (const c of sb.clips) {
     host,
     ...(e.from ? { from: e.from } : {}),
     ...(e.push ? { push: e.push } : {}),
+    ...(e.framing ? { framing: { ...timelineFraming(), ...e.framing } } : {}),
     grade: e.grade ?? "neutral",
     ...(e.captions === false ? {} : { captions: chunk(words) }),
     scenes,

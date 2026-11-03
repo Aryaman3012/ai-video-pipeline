@@ -21,6 +21,7 @@ export type Beat = {
   from?: HostMode; // animate in from this mode at 0
   push?: number; // slow zoom creep while full, e.g. 0.12
   grade?: "cool" | "warm" | "neutral";
+  framing?: { face_x: number; face_y: number; body_y: number }; // per-beat override (e.g. a guest elsewhere in frame)
   captions?: Word[][]; // chunks of 2–4 words; omit for no captions on this beat
   scenes: SceneRef[];
 };

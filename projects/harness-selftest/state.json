@@ -1,0 +1,24 @@
+{
+ "slug": "harness-selftest",
+ "flow": "storyboard",
+ "stage": "edit",
+ "format": {
+  "aspect_ratio": "16:9",
+  "fps": 24,
+  "generator": {
+   "name": "veo",
+   "model": "Veo 3.1 Fast"
+  }
+ },
+ "current_scene": null,
+ "current_take": null,
+ "approved": {
+  "storyboard": true,
+  "audit": false,
+  "vision": false,
+  "breakdown": false,
+  "broll": false,
+  "final": false
+ },
+ "updated_at": "2026-11-04T02:22:12+0530"
+}

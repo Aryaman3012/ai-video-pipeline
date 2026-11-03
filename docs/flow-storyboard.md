@@ -92,6 +92,23 @@ sentences: what the viewer sees and why), `props` (the copy and data it shows), 
 `2.4` (seconds) · `"multiply"` (first time he says it) · `"leads#2"` (second time) ·
 `"deal-0.6"` (0.6 s before the word) · `"@start"` · `"@end-0.5"`.
 
+### Optional storyboard parts
+
+- **First-frame stills** (`keyframes`): when the cast still doesn't exist yet or the framing must
+  change (e.g. a presenter with empty space on one side), add
+  `{ "id": "host", "view": "keyframe-still", "prompt": {…slots}, "output": "01_vision/refs/host_still.png" }`.
+  It is rendered first in `ALL-PROMPTS.md`; point the cast's `reference_image` at it.
+- **Silent generated b-roll** (`broll`): a real-looking shot no Remotion scene can fake (a clinic
+  interior, a skyline, a patient at reception). `{ "id": "b01", "view": "broll-silent.aerial",
+  "purpose": "…", "prompt": {…slots} }`, used in a beat as the built-in scene
+  `{ "name": "Footage", "layer": "under" | "beside", "props": { "clip": "b01", "fit": "cover",
+  "focus_x": 0.5, "focus_y": 0.5 }, "cues": { "in": "word" } }`. The host keeps talking over it (put
+  him in `pip` for `under`). The user saves the files as `04_clips/broll-b01….mp4`. Use sparingly:
+  every generated shot is a chance for artefacts; a designed scene usually says more.
+- **Per-beat framing** (`edit.framing`): when a beat's speaker sits elsewhere in frame (a podcast
+  guest on the right), override `{ "face_x", "face_y", "body_y" }` for that beat so `split`/`pip`
+  crops land on their face. The top-level `framing` is the default for every beat.
+
 ### 4. Design rules (from the productions so far)
 
 1. **Show, don't restate.** A graphic carries what the words can't: the product working, a
@@ -149,9 +166,22 @@ frame and drops the results into `04_clips/` — any file names, extra takes wel
 ```bash
 python3 tools/ingest.py <slug>          # --force to redo, --model small.en for speed
 ```
+Runway profile: `RUNWAYML_API_SECRET=… node tools/runway-generate.mjs <slug>` can generate the clips
+instead (image-to-video from each take's first frame; try `--dry-run` and one clip first).
+
 Read its report. Fix before moving on: a `missing` clip (generate it), similarity < 0.8 (the take
 says something else — regenerate, or accept and update the storyboard line), a trim that cuts a
 word. Then open two or three `05_ingest/words/NN.json` and sanity-check timings. `stage: scenes`.
+
+When the automatic pass is wrong, pin it in `05_ingest/overrides.json` and re-run ingest:
+```json
+{ "03": { "take": "Man_speaking_…_a998.mp4" },
+  "04": { "trim": { "start": 0.40, "end": 6.95 } },
+  "05": { "stitch": [ { "file": "take-a.mp4", "in": 0.0, "out": 3.9 }, { "file": "take-b.mp4", "in": 3.85, "out": 7.9 } ] },
+  "b01": { "trim": { "start": 0.5, "end": 5.5 } } }
+```
+A stitch joins sub-ranges of several takes (cut on a word boundary, ideally where a graphic
+covers the host) and is re-transcribed afterwards so its cues stay exact.
 
 ## ④ Scenes
 

@@ -2,11 +2,12 @@ import React from "react";
 import { AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { PROJECT_SCENES } from "../projects";
 import { Captions, EndCard, Grain, LogoBug } from "./Chrome";
+import { Footage } from "./Footage";
 import { BeatProvider, TimelineProvider, usePalette, useTimeline } from "./context";
 import { Host, useGeometry, usePipAmount, useSplitAmount } from "./Host";
 import type { Beat, SceneRef, Timeline } from "./types";
 
-const BUILT_IN: Record<string, React.FC<any>> = { LogoBug }; // eslint-disable-line @typescript-eslint/no-explicit-any
+const BUILT_IN: Record<string, React.FC<any>> = { LogoBug, Footage }; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 const Missing: React.FC<{ name: string }> = ({ name }) => (
   <AbsoluteFill style={{ background: "#B00020", color: "#fff", justifyContent: "center", alignItems: "center", fontSize: 48 }}>Unknown scene: {name}</AbsoluteFill>

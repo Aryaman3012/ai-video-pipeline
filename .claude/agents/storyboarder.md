@@ -24,7 +24,10 @@ Produce:
    Each clip: `id` ("01"…), `section`, `view`, `line` (the exact words), `prompt` (the view's
    slots: `cast`, `location`, timed `line` segments ending in a silent tail, `delivery`, `gesture`
    toward where a graphic will appear), and `edit` (`host` keyframes, optional `from`/`push`/
-   `grade`, `scenes` with `name`, `layer`, `idea`, `props`, `cues` as word references).
+   `grade`, `framing` when this beat's speaker sits elsewhere in frame, `scenes` with `name`,
+   `layer`, `idea`, `props`, `cues` as word references). Optional: `keyframes` (first-frame stills
+   to make first) and `broll` (silent generated shots, used through the built-in `Footage` scene) —
+   see "Optional storyboard parts" in the flow guide.
 2. Run `node tools/storyboard-prompts.mjs <slug>` → `03_prompts/clip-NN.prompt.{json,md}` and
    `03_prompts/ALL-PROMPTS.md`. Fix every ✗ it reports.
 3. `02_storyboard/storyboard.md` — for the user: one block per clip with the line, the view, the
