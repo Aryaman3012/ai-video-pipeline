@@ -1,0 +1,1018 @@
+{
+ "slug": "heyanaya-script3",
+ "version": 4,
+ "fps": 24,
+ "source": {
+  "w": 1080,
+  "h": 720
+ },
+ "framing": {
+  "face_x": 0.52,
+  "face_y": 0.27,
+  "body_y": 0.5
+ },
+ "palette": {
+  "night": "#0E1B24",
+  "nightLine": "#1C2D3A",
+  "money": "#0E8F80",
+  "moneyWash": "#DDF4F0"
+ },
+ "brand": {
+  "name": "HeyAnaya",
+  "logo_light": "projects/heyanaya-script3/brand/logo-white.png",
+  "logo_dark": "projects/heyanaya-script3/brand/logo-black.png"
+ },
+ "end_card": {
+  "seconds": 3.2,
+  "headline": "Answer every enquiry. Book more patients.",
+  "cta": "Book a demo",
+  "url": ""
+ },
+ "captions": {
+  "landscape": true,
+  "vertical": true
+ },
+ "beats": [
+  {
+   "id": "01",
+   "src": "projects/heyanaya-script3/clips/01.mp4",
+   "dur": 7.47,
+   "host": [
+    [
+     0,
+     "full"
+    ],
+    [
+     1.12,
+     "split"
+    ]
+   ],
+   "push": 0.05,
+   "grade": "cool",
+   "captions": [
+    [
+     {
+      "w": "A",
+      "s": 0.04,
+      "e": 0.34
+     },
+     {
+      "w": "few",
+      "s": 0.34,
+      "e": 0.58
+     },
+     {
+      "w": "unanswered",
+      "s": 0.58,
+      "e": 1.22,
+      "k": "neg"
+     },
+     {
+      "w": "WhatsApp",
+      "s": 1.22,
+      "e": 1.56
+     }
+    ],
+    [
+     {
+      "w": "enquiries",
+      "s": 1.56,
+      "e": 2.22
+     },
+     {
+      "w": "don't",
+      "s": 2.22,
+      "e": 2.68
+     },
+     {
+      "w": "seem",
+      "s": 2.68,
+      "e": 2.84
+     },
+     {
+      "w": "like",
+      "s": 2.84,
+      "e": 3.04
+     }
+    ],
+    [
+     {
+      "w": "a",
+      "s": 3.04,
+      "e": 3.06
+     },
+     {
+      "w": "big",
+      "s": 3.06,
+      "e": 3.28
+     },
+     {
+      "w": "deal.",
+      "s": 3.28,
+      "e": 3.62
+     }
+    ],
+    [
+     {
+      "w": "Now",
+      "s": 4.3,
+      "e": 4.5
+     },
+     {
+      "w": "multiply",
+      "s": 4.5,
+      "e": 4.88
+     },
+     {
+      "w": "that",
+      "s": 4.88,
+      "e": 5.3
+     },
+     {
+      "w": "across",
+      "s": 5.3,
+      "e": 5.72
+     }
+    ],
+    [
+     {
+      "w": "all",
+      "s": 5.72,
+      "e": 6.12
+     },
+     {
+      "w": "your",
+      "s": 6.12,
+      "e": 6.32
+     },
+     {
+      "w": "clinic",
+      "s": 6.32,
+      "e": 6.6
+     },
+     {
+      "w": "locations.",
+      "s": 6.6,
+      "e": 7.12
+     }
+    ]
+   ],
+   "scenes": [
+    {
+     "name": "UnansweredInbox",
+     "layer": "beside",
+     "props": {
+      "clinic": "Jumeirah",
+      "time": "9:48 PM",
+      "chats": [
+       {
+        "name": "Mariam",
+        "text_ar": "مرحبا، عندكم موعد هالأسبوع؟",
+        "text_en": "Hi, any appointment this week?",
+        "ago": "2h"
+       },
+       {
+        "name": "+971 50 ••• 4417",
+        "text_en": "How much is laser hair removal?",
+        "ago": "3h"
+       },
+       {
+        "name": "Khalid",
+        "text_ar": "الدكتورة سارة موجودة السبت؟",
+        "text_en": "Is Dr. Sara in on Saturday?",
+        "ago": "Yesterday"
+       }
+      ],
+      "unread": 3,
+      "deck_locations": [
+       "Al Barsha",
+       "Dubai Marina",
+       "Business Bay",
+       "Mirdif",
+       "Sharjah",
+       "Abu Dhabi"
+      ],
+      "notes": "Names, numbers and locations are illustrative placeholders. Generic green chat styling only — no WhatsApp logo. Arabic bubbles carry a small grey English line beneath."
+     },
+     "cues": {
+      "phone": 1.22,
+      "chats": 1.56,
+      "settle": 3.28,
+      "multiply": 4.5,
+      "tags": 5.3
+     }
+    }
+   ]
+  },
+  {
+   "id": "02",
+   "src": "projects/heyanaya-script3/clips/02.mp4",
+   "dur": 7.28,
+   "host": [
+    [
+     0,
+     "pip"
+    ]
+   ],
+   "from": "split",
+   "grade": "cool",
+   "captions": [
+    [
+     {
+      "w": "One",
+      "s": 0.25,
+      "e": 0.55
+     },
+     {
+      "w": "at",
+      "s": 0.55,
+      "e": 0.95
+     },
+     {
+      "w": "your",
+      "s": 0.95,
+      "e": 1.15
+     },
+     {
+      "w": "first",
+      "s": 1.15,
+      "e": 1.43
+     }
+    ],
+    [
+     {
+      "w": "clinic.",
+      "s": 1.43,
+      "e": 1.77
+     },
+     {
+      "w": "Another",
+      "s": 2.93,
+      "e": 3.25
+     },
+     {
+      "w": "at",
+      "s": 3.25,
+      "e": 3.55
+     },
+     {
+      "w": "your",
+      "s": 3.55,
+      "e": 3.71
+     }
+    ],
+    [
+     {
+      "w": "second.",
+      "s": 3.71,
+      "e": 4.15
+     },
+     {
+      "w": "And",
+      "s": 4.61,
+      "e": 5.17
+     },
+     {
+      "w": "more",
+      "s": 5.17,
+      "e": 5.53
+     },
+     {
+      "w": "across",
+      "s": 5.53,
+      "e": 5.95
+     }
+    ],
+    [
+     {
+      "w": "the",
+      "s": 5.95,
+      "e": 6.07
+     },
+     {
+      "w": "rest",
+      "s": 6.07,
+      "e": 6.27
+     },
+     {
+      "w": "of",
+      "s": 6.27,
+      "e": 6.43
+     },
+     {
+      "w": "your",
+      "s": 6.43,
+      "e": 6.59
+     },
+     {
+      "w": "network.",
+      "s": 6.59,
+      "e": 6.93
+     }
+    ]
+   ],
+   "scenes": [
+    {
+     "name": "ClinicNetworkMap",
+     "layer": "under",
+     "props": {
+      "pins": [
+       {
+        "name": "Jumeirah",
+        "order": "first"
+       },
+       {
+        "name": "Al Barsha",
+        "order": "second"
+       },
+       {
+        "name": "Dubai Marina"
+       },
+       {
+        "name": "Business Bay"
+       },
+       {
+        "name": "Mirdif"
+       },
+       {
+        "name": "Sharjah"
+       },
+       {
+        "name": "Abu Dhabi"
+       },
+       {
+        "name": "Al Ain"
+       }
+      ],
+      "bubble": "No reply",
+      "notes": "Locations are illustrative (replace with the client's real branches). Keep every pin and label out of the 16:9 bottom-left pip corner and the bottom 150u caption band, and out of the 9:16 top-right pip corner and the y 640–720 caption band — frame the map so the Abu Dhabi end sits clear of the corner."
+     },
+     "cues": {
+      "map": 0,
+      "first": 1.15,
+      "second": 3.71,
+      "rest": 6.07,
+      "network": 6.59
+     }
+    }
+   ]
+  },
+  {
+   "id": "03",
+   "src": "projects/heyanaya-script3/clips/03.mp4",
+   "dur": 6.07,
+   "host": [
+    [
+     0,
+     "full"
+    ],
+    [
+     1.84,
+     "split"
+    ]
+   ],
+   "from": "pip",
+   "grade": "neutral",
+   "captions": [
+    [
+     {
+      "w": "Each",
+      "s": 0.18,
+      "e": 0.48
+     },
+     {
+      "w": "one",
+      "s": 0.48,
+      "e": 0.76
+     },
+     {
+      "w": "could",
+      "s": 0.76,
+      "e": 1
+     },
+     {
+      "w": "be",
+      "s": 1,
+      "e": 1.32
+     }
+    ],
+    [
+     {
+      "w": "a",
+      "s": 1.32,
+      "e": 1.56
+     },
+     {
+      "w": "potential",
+      "s": 1.56,
+      "e": 1.94
+     },
+     {
+      "w": "patient",
+      "s": 1.94,
+      "e": 2.3
+     },
+     {
+      "w": "you",
+      "s": 2.3,
+      "e": 2.6
+     }
+    ],
+    [
+     {
+      "w": "paid",
+      "s": 2.6,
+      "e": 2.82
+     },
+     {
+      "w": "to",
+      "s": 2.82,
+      "e": 3.04
+     },
+     {
+      "w": "attract,",
+      "s": 3.04,
+      "e": 3.5
+     }
+    ],
+    [
+     {
+      "w": "but",
+      "s": 4.1,
+      "e": 4.26
+     },
+     {
+      "w": "never",
+      "s": 4.26,
+      "e": 4.62,
+      "k": "neg"
+     },
+     {
+      "w": "converted",
+      "s": 4.62,
+      "e": 5.14
+     },
+     {
+      "w": "into",
+      "s": 5.14,
+      "e": 5.52
+     }
+    ],
+    [
+     {
+      "w": "a",
+      "s": 5.52,
+      "e": 5.66
+     },
+     {
+      "w": "booking.",
+      "s": 5.66,
+      "e": 5.9
+     }
+    ]
+   ],
+   "scenes": [
+    {
+     "name": "LostLeadTrail",
+     "layer": "beside",
+     "props": {
+      "patient": {
+       "name": "Mariam A.",
+       "wanted": "Dermatology consult",
+       "via": "Social media ad"
+      },
+      "cost_tag": "AED 95 per lead",
+      "illustrative": true,
+      "slot": {
+       "label": "Thu · 4:30 PM",
+       "state": "Not booked"
+      },
+      "notes": "Cost per lead is illustrative — label it 'Illustrative' on screen unless the client supplies a real figure. Ad source is a generic 'Social media ad' card, no platform logos."
+     },
+     "cues": {
+      "card": 1.94,
+      "paid": 2.6,
+      "attract": 3.04,
+      "never": 4.26,
+      "empty": 4.62
+     }
+    }
+   ]
+  },
+  {
+   "id": "04",
+   "src": "projects/heyanaya-script3/clips/04.mp4",
+   "dur": 6.82,
+   "host": [
+    [
+     0,
+     "full"
+    ],
+    [
+     1.74,
+     "pip"
+    ]
+   ],
+   "from": "split",
+   "push": 0.04,
+   "grade": "cool",
+   "captions": [
+    [
+     {
+      "w": "Now",
+      "s": 0,
+      "e": 0.3
+     },
+     {
+      "w": "imagine",
+      "s": 0.3,
+      "e": 1.02
+     },
+     {
+      "w": "how",
+      "s": 1.02,
+      "e": 1.54
+     },
+     {
+      "w": "many",
+      "s": 1.54,
+      "e": 1.84
+     }
+    ],
+    [
+     {
+      "w": "booking",
+      "s": 1.84,
+      "e": 2.16
+     },
+     {
+      "w": "opportunities",
+      "s": 2.16,
+      "e": 2.9
+     },
+     {
+      "w": "your",
+      "s": 2.9,
+      "e": 3.58
+     },
+     {
+      "w": "entire",
+      "s": 3.58,
+      "e": 4.3
+     }
+    ],
+    [
+     {
+      "w": "chain",
+      "s": 4.3,
+      "e": 4.8
+     },
+     {
+      "w": "could",
+      "s": 4.8,
+      "e": 5.3
+     },
+     {
+      "w": "be",
+      "s": 5.3,
+      "e": 5.52
+     },
+     {
+      "w": "missing",
+      "s": 5.52,
+      "e": 5.9,
+      "k": "neg"
+     }
+    ],
+    [
+     {
+      "w": "over",
+      "s": 5.9,
+      "e": 6.34
+     },
+     {
+      "w": "a",
+      "s": 6.34,
+      "e": 6.48
+     },
+     {
+      "w": "month.",
+      "s": 6.48,
+      "e": 6.72
+     }
+    ]
+   ],
+   "scenes": [
+    {
+     "name": "MissedMonthHeatmap",
+     "layer": "under",
+     "props": {
+      "rows": [
+       "Jumeirah",
+       "Al Barsha",
+       "Dubai Marina",
+       "Business Bay",
+       "Mirdif",
+       "Sharjah",
+       "Abu Dhabi",
+       "Al Ain"
+      ],
+      "days": 30,
+      "counter_label": "Missed booking opportunities · this month",
+      "counter_to": 960,
+      "illustrative": true,
+      "notes": "960 = 8 clinics × ~4 a day × 30 days, invented — show 'Illustrative' under the counter. 9:16: transpose to clinics as columns, days as rows. Keep the counter out of the pip corners and caption bands."
+     },
+     "cues": {
+      "grid": 1.84,
+      "chain": 4.3,
+      "fill": 4.8,
+      "total": 5.9
+     }
+    }
+   ]
+  },
+  {
+   "id": "05",
+   "src": "projects/heyanaya-script3/clips/05.mp4",
+   "dur": 7.95,
+   "host": [
+    [
+     0,
+     "full"
+    ],
+    [
+     0.44,
+     "split"
+    ]
+   ],
+   "from": "pip",
+   "grade": "warm",
+   "captions": [
+    [
+     {
+      "w": "Hey",
+      "s": 0,
+      "e": 0.22
+     },
+     {
+      "w": "Anaya",
+      "s": 0.22,
+      "e": 0.54
+     },
+     {
+      "w": "responds",
+      "s": 0.54,
+      "e": 0.98
+     },
+     {
+      "w": "to",
+      "s": 0.98,
+      "e": 1.26
+     }
+    ],
+    [
+     {
+      "w": "all",
+      "s": 1.26,
+      "e": 1.5
+     },
+     {
+      "w": "your",
+      "s": 1.5,
+      "e": 1.74
+     },
+     {
+      "w": "leads",
+      "s": 1.74,
+      "e": 1.96
+     },
+     {
+      "w": "instantly",
+      "s": 1.96,
+      "e": 2.6,
+      "k": "pos"
+     }
+    ],
+    [
+     {
+      "w": "and",
+      "s": 2.6,
+      "e": 3.14
+     },
+     {
+      "w": "in",
+      "s": 3.14,
+      "e": 3.24
+     },
+     {
+      "w": "their",
+      "s": 3.24,
+      "e": 3.46
+     },
+     {
+      "w": "preferred",
+      "s": 3.46,
+      "e": 3.78
+     }
+    ],
+    [
+     {
+      "w": "language,",
+      "s": 3.78,
+      "e": 4.26,
+      "k": "pos"
+     },
+     {
+      "w": "crafts",
+      "s": 4.5,
+      "e": 4.72
+     },
+     {
+      "w": "messages",
+      "s": 4.72,
+      "e": 5.14
+     },
+     {
+      "w": "that",
+      "s": 5.14,
+      "e": 5.46
+     }
+    ],
+    [
+     {
+      "w": "convert,",
+      "s": 5.46,
+      "e": 5.86,
+      "k": "pos"
+     },
+     {
+      "w": "and",
+      "s": 6.3,
+      "e": 6.44
+     },
+     {
+      "w": "then",
+      "s": 6.44,
+      "e": 6.6
+     },
+     {
+      "w": "schedules",
+      "s": 6.6,
+      "e": 7,
+      "k": "pos"
+     }
+    ],
+    [
+     {
+      "w": "the",
+      "s": 7,
+      "e": 7.26
+     },
+     {
+      "w": "appointments.",
+      "s": 7.26,
+      "e": 7.62
+     }
+    ]
+   ],
+   "scenes": [
+    {
+     "name": "AnayaBooksIt",
+     "layer": "beside",
+     "props": {
+      "patient": "Mariam A.",
+      "incoming_ar": "مرحبا، عندكم موعد هالأسبوع؟",
+      "incoming_en": "Hi, any appointment this week?",
+      "reply_ar": "أهلاً مريم! عندنا موعد مع د. ليلى يوم الخميس ٤:٣٠ أو السبت ١١ الصبح. أي واحد يناسبك؟",
+      "reply_en": "Hi Mariam! Dr. Layla has Thu 4:30 PM or Sat 11 AM. Which suits you?",
+      "response_chip": "Replied in 3 s",
+      "language_chip": "EN → AR",
+      "quick_replies": [
+       "Thu 4:30 PM",
+       "Sat 11:00 AM"
+      ],
+      "booking": {
+       "title": "Booked",
+       "detail": "Thu 4:30 PM · Dermatology · Jumeirah",
+       "doctor": "Dr. Layla"
+      },
+      "notes": "Response time and names are illustrative. Generic green chat styling, HeyAnaya shown as the sender name with the brand mark (logo-white.png on dark), no WhatsApp branding. Arabic copy needs a native-speaker check."
+     },
+     "cues": {
+      "incoming": 0.54,
+      "reply": 1.96,
+      "language": 3.78,
+      "craft": 4.5,
+      "tap": 5.46,
+      "confirm": 6.6,
+      "calendar": 7.26
+     }
+    }
+   ]
+  },
+  {
+   "id": "06",
+   "src": "projects/heyanaya-script3/clips/06.mp4",
+   "dur": 5.53,
+   "host": [
+    [
+     0,
+     "full"
+    ],
+    [
+     3.64,
+     "pip"
+    ]
+   ],
+   "from": "split",
+   "push": 0.06,
+   "grade": "neutral",
+   "captions": [
+    [
+     {
+      "w": "Because",
+      "s": 0.14,
+      "e": 0.44
+     },
+     {
+      "w": "growing",
+      "s": 0.44,
+      "e": 0.86
+     },
+     {
+      "w": "a",
+      "s": 0.86,
+      "e": 1.14
+     },
+     {
+      "w": "clinic",
+      "s": 1.14,
+      "e": 1.36
+     }
+    ],
+    [
+     {
+      "w": "chain",
+      "s": 1.36,
+      "e": 1.84
+     },
+     {
+      "w": "isn't",
+      "s": 1.84,
+      "e": 2.78
+     },
+     {
+      "w": "just",
+      "s": 2.78,
+      "e": 3.2
+     },
+     {
+      "w": "about",
+      "s": 3.2,
+      "e": 3.74
+     }
+    ],
+    [
+     {
+      "w": "generating",
+      "s": 3.74,
+      "e": 4.46
+     },
+     {
+      "w": "more",
+      "s": 4.46,
+      "e": 4.82
+     },
+     {
+      "w": "leads.",
+      "s": 4.82,
+      "e": 5.18
+     }
+    ]
+   ],
+   "scenes": [
+    {
+     "name": "LeakyFunnel",
+     "layer": "under",
+     "props": {
+      "tap_label": "Ad spend",
+      "inflow_label": "Leads ×2",
+      "leaks": [
+       "No reply",
+       "After hours",
+       "Wrong language"
+      ],
+      "tray_label": "Bookings",
+      "notes": "No numbers — dot flow only. Keep the funnel centred-right in 16:9 so the bottom-left pip corner and caption band stay clear; in 9:16 keep the leak labels below the top-right pip."
+     },
+     "cues": {
+      "funnel": 3.74,
+      "more": 4.46,
+      "spill": 4.82
+     }
+    }
+   ]
+  },
+  {
+   "id": "07",
+   "src": "projects/heyanaya-script3/clips/07.mp4",
+   "dur": 4.97,
+   "host": [
+    [
+     0,
+     "split"
+    ]
+   ],
+   "from": "pip",
+   "grade": "warm",
+   "captions": [
+    [
+     {
+      "w": "It's",
+      "s": 0.25,
+      "e": 0.55
+     },
+     {
+      "w": "about",
+      "s": 0.55,
+      "e": 0.81
+     },
+     {
+      "w": "turning",
+      "s": 0.81,
+      "e": 1.27
+     },
+     {
+      "w": "more",
+      "s": 1.27,
+      "e": 1.77
+     }
+    ],
+    [
+     {
+      "w": "of",
+      "s": 1.77,
+      "e": 1.99
+     },
+     {
+      "w": "the",
+      "s": 1.99,
+      "e": 2.21
+     },
+     {
+      "w": "leads",
+      "s": 2.21,
+      "e": 2.43
+     },
+     {
+      "w": "you",
+      "s": 2.43,
+      "e": 2.61
+     }
+    ],
+    [
+     {
+      "w": "already",
+      "s": 2.61,
+      "e": 3.09
+     },
+     {
+      "w": "have",
+      "s": 3.09,
+      "e": 3.61
+     },
+     {
+      "w": "into",
+      "s": 3.61,
+      "e": 4.23
+     },
+     {
+      "w": "bookings.",
+      "s": 4.23,
+      "e": 4.79,
+      "k": "pos"
+     }
+    ]
+   ],
+   "scenes": [
+    {
+     "name": "SealedFunnel",
+     "layer": "beside",
+     "props": {
+      "patch_label": "HeyAnaya",
+      "tap_label": "Same ad spend",
+      "calendar_label": "Bookings this week",
+      "notes": "Mirror of LeakyFunnel so the change reads instantly; no numbers. The patches may carry the logo-white.png mark."
+     },
+     "cues": {
+      "seal": 0.81,
+      "flow": 2.21,
+      "tap": 2.61,
+      "fill": 4.23
+     }
+    }
+   ]
+  }
+ ]
+}

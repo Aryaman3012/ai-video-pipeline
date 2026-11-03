@@ -1,0 +1,618 @@
+{
+  "slug": "heyanaya-script3",
+  "fps": 24,
+  "generator": "veo",
+  "brand": {
+    "name": "HeyAnaya",
+    "logo_light": "logo-white.png",
+    "logo_dark": "logo-black.png"
+  },
+  "framing": {
+    "face_x": 0.52,
+    "face_y": 0.27,
+    "body_y": 0.5
+  },
+  "palette": {
+    "night": "#0E1B24",
+    "nightLine": "#1C2D3A",
+    "money": "#0E8F80",
+    "moneyWash": "#DDF4F0"
+  },
+  "captions": {
+    "landscape": true,
+    "vertical": true,
+    "emphasis": {
+      "pos": [
+        "instantly",
+        "language",
+        "convert",
+        "schedules",
+        "bookings"
+      ],
+      "neg": [
+        "unanswered",
+        "never",
+        "missing"
+      ]
+    }
+  },
+  "end_card": {
+    "seconds": 3.2,
+    "headline": "Answer every enquiry. Book more patients.",
+    "cta": "Book a demo",
+    "url": ""
+  },
+  "clips": [
+    {
+      "id": "01",
+      "section": "Hook",
+      "view": "podcast-host",
+      "line": "A few unanswered WhatsApp enquiries don't seem like a big deal. Now multiply that across all your clinic locations.",
+      "prompt": {
+        "cast": "CHAR_HOST",
+        "location": "LOC_STUDIO_HOST",
+        "line": [
+          {
+            "from": 0.0,
+            "to": 0.4,
+            "silence": true
+          },
+          {
+            "from": 0.4,
+            "to": 4.5,
+            "say": "A few unanswered WhatsApp enquiries don't seem like a big deal."
+          },
+          {
+            "from": 4.6,
+            "to": 7.7,
+            "say": "Now multiply that across all your clinic locations."
+          },
+          {
+            "from": 7.7,
+            "to": 8.0,
+            "pause": true
+          }
+        ],
+        "delivery": "Easy and conversational, slightly wry on \"don't seem like a big deal\", then leaning in with weight on \"multiply\".",
+        "gesture": "on \"WhatsApp\" he turns one open palm toward frame right; on \"multiply\" he spreads both hands apart above the table."
+      },
+      "edit": {
+        "host": [
+          [
+            "@start",
+            "full"
+          ],
+          [
+            "WhatsApp-0.1",
+            "split"
+          ]
+        ],
+        "push": 0.05,
+        "grade": "cool",
+        "scenes": [
+          {
+            "name": "UnansweredInbox",
+            "layer": "beside",
+            "idea": "One clinic's front-desk phone, late evening: a generic green chat list where three patient enquiries sit with grey single ticks and a red unread badge — small, polite, easy to ignore. On \"deal\" the phone settles back a little (no alarm, nothing happens). On \"multiply\" identical phones slide out from behind it as a fanned deck, each tagged with a different clinic location, so one inbox becomes many.",
+            "props": {
+              "clinic": "Jumeirah",
+              "time": "9:48 PM",
+              "chats": [
+                {
+                  "name": "Mariam",
+                  "text_ar": "مرحبا، عندكم موعد هالأسبوع؟",
+                  "text_en": "Hi, any appointment this week?",
+                  "ago": "2h"
+                },
+                {
+                  "name": "+971 50 ••• 4417",
+                  "text_en": "How much is laser hair removal?",
+                  "ago": "3h"
+                },
+                {
+                  "name": "Khalid",
+                  "text_ar": "الدكتورة سارة موجودة السبت؟",
+                  "text_en": "Is Dr. Sara in on Saturday?",
+                  "ago": "Yesterday"
+                }
+              ],
+              "unread": 3,
+              "deck_locations": [
+                "Al Barsha",
+                "Dubai Marina",
+                "Business Bay",
+                "Mirdif",
+                "Sharjah",
+                "Abu Dhabi"
+              ],
+              "notes": "Names, numbers and locations are illustrative placeholders. Generic green chat styling only — no WhatsApp logo. Arabic bubbles carry a small grey English line beneath."
+            },
+            "cues": {
+              "phone": "WhatsApp",
+              "chats": "enquiries",
+              "settle": "deal",
+              "multiply": "multiply",
+              "tags": "across"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "02",
+      "section": "Build the problem",
+      "view": "podcast-host",
+      "line": "One at your first clinic. Another at your second. And more across the rest of your network.",
+      "prompt": {
+        "cast": "CHAR_HOST",
+        "location": "LOC_STUDIO_HOST",
+        "line": [
+          {
+            "from": 0.0,
+            "to": 0.4,
+            "silence": true
+          },
+          {
+            "from": 0.4,
+            "to": 2.4,
+            "say": "One at your first clinic."
+          },
+          {
+            "from": 2.5,
+            "to": 4.1,
+            "say": "Another at your second."
+          },
+          {
+            "from": 4.2,
+            "to": 7.2,
+            "say": "And more across the rest of your network."
+          },
+          {
+            "from": 7.2,
+            "to": 8.0,
+            "pause": true
+          }
+        ],
+        "delivery": "Counting off, unhurried, a small beat between each clinic, building on \"the rest of your network\".",
+        "gesture": "on \"first\" he places one hand on the table, on \"second\" a little further along it, and on \"network\" he sweeps that hand wide across the table."
+      },
+      "edit": {
+        "from": "split",
+        "host": [
+          [
+            "@start",
+            "pip"
+          ]
+        ],
+        "grade": "cool",
+        "scenes": [
+          {
+            "name": "ClinicNetworkMap",
+            "layer": "under",
+            "idea": "A dark, stylised map of the UAE coast (Abu Dhabi → Dubai → Sharjah, Al Ain inland) in brand navy. Each clinic is a pin; as he counts, a pin drops and a small grey chat bubble with an amber 'no reply' pulse hangs over it. On \"rest\" the remaining pins pop in a fast ripple, each with its own pulsing bubble, and on \"network\" thin teal lines join them into one chain — the whole network is quietly leaking.",
+            "props": {
+              "pins": [
+                {
+                  "name": "Jumeirah",
+                  "order": "first"
+                },
+                {
+                  "name": "Al Barsha",
+                  "order": "second"
+                },
+                {
+                  "name": "Dubai Marina"
+                },
+                {
+                  "name": "Business Bay"
+                },
+                {
+                  "name": "Mirdif"
+                },
+                {
+                  "name": "Sharjah"
+                },
+                {
+                  "name": "Abu Dhabi"
+                },
+                {
+                  "name": "Al Ain"
+                }
+              ],
+              "bubble": "No reply",
+              "notes": "Locations are illustrative (replace with the client's real branches). Keep every pin and label out of the 16:9 bottom-left pip corner and the bottom 150u caption band, and out of the 9:16 top-right pip corner and the y 640–720 caption band — frame the map so the Abu Dhabi end sits clear of the corner."
+            },
+            "cues": {
+              "map": "@start",
+              "first": "first",
+              "second": "second",
+              "rest": "rest",
+              "network": "network"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "03",
+      "section": "Build the problem",
+      "view": "podcast-host",
+      "line": "Each one could be a potential patient you paid to attract, but never converted into a booking.",
+      "prompt": {
+        "cast": "CHAR_HOST",
+        "location": "LOC_STUDIO_HOST",
+        "line": [
+          {
+            "from": 0.0,
+            "to": 0.4,
+            "silence": true
+          },
+          {
+            "from": 0.4,
+            "to": 4.5,
+            "say": "Each one could be a potential patient you paid to attract,"
+          },
+          {
+            "from": 4.7,
+            "to": 7.0,
+            "say": "but never converted into a booking."
+          },
+          {
+            "from": 7.0,
+            "to": 8.0,
+            "pause": true
+          }
+        ],
+        "delivery": "Quieter and pointed, a slight shake of the head on \"never converted\".",
+        "gesture": "on \"patient\" he opens one palm toward frame right and holds it there briefly."
+      },
+      "edit": {
+        "from": "pip",
+        "host": [
+          [
+            "@start",
+            "full"
+          ],
+          [
+            "patient-0.1",
+            "split"
+          ]
+        ],
+        "scenes": [
+          {
+            "name": "LostLeadTrail",
+            "layer": "beside",
+            "idea": "Zoom into one of those bubbles and it becomes a person: a patient card (photo-less avatar, name, what she wanted). Above it, on \"paid\", the ad that brought her in stamps a cost tag — this enquiry was bought. A dotted path then runs down from her card toward a calendar slot; on \"never\" the path stalls and fades, and on \"booking\" the slot stays an empty dashed outline marked 'Not booked'. Money in, nothing out.",
+            "props": {
+              "patient": {
+                "name": "Mariam A.",
+                "wanted": "Dermatology consult",
+                "via": "Social media ad"
+              },
+              "cost_tag": "AED 95 per lead",
+              "illustrative": true,
+              "slot": {
+                "label": "Thu · 4:30 PM",
+                "state": "Not booked"
+              },
+              "notes": "Cost per lead is illustrative — label it 'Illustrative' on screen unless the client supplies a real figure. Ad source is a generic 'Social media ad' card, no platform logos."
+            },
+            "cues": {
+              "card": "patient",
+              "paid": "paid",
+              "attract": "attract",
+              "never": "never",
+              "empty": "converted"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "04",
+      "section": "Scale the impact",
+      "view": "podcast-host",
+      "line": "Now imagine how many booking opportunities your entire chain could be missing over a month.",
+      "prompt": {
+        "cast": "CHAR_HOST",
+        "location": "LOC_STUDIO_HOST",
+        "line": [
+          {
+            "from": 0.0,
+            "to": 0.4,
+            "silence": true
+          },
+          {
+            "from": 0.4,
+            "to": 2.8,
+            "say": "Now imagine how many booking opportunities"
+          },
+          {
+            "from": 2.9,
+            "to": 6.3,
+            "say": "your entire chain could be missing over a month."
+          },
+          {
+            "from": 6.3,
+            "to": 8.0,
+            "pause": true
+          }
+        ],
+        "delivery": "Slower, inviting the listener to picture it, with weight on \"entire chain\" and \"month\".",
+        "gesture": "on \"imagine\" he lifts both hands, palms up, and holds them apart."
+      },
+      "edit": {
+        "from": "split",
+        "host": [
+          [
+            "@start",
+            "full"
+          ],
+          [
+            "booking-0.1",
+            "pip"
+          ]
+        ],
+        "push": 0.04,
+        "grade": "cool",
+        "scenes": [
+          {
+            "name": "MissedMonthHeatmap",
+            "layer": "under",
+            "idea": "The single empty slot from the last beat multiplies into a month: a grid with one row per clinic and one column per day. On \"chain\" all clinic rows are in place; from \"missing\" the cells fill left to right, day by day, in deepening amber as missed booking opportunities pile up, while a counter in the corner races upward. On \"month\" the last column fills and the total lands — the size of the problem, at chain scale.",
+            "props": {
+              "rows": [
+                "Jumeirah",
+                "Al Barsha",
+                "Dubai Marina",
+                "Business Bay",
+                "Mirdif",
+                "Sharjah",
+                "Abu Dhabi",
+                "Al Ain"
+              ],
+              "days": 30,
+              "counter_label": "Missed booking opportunities · this month",
+              "counter_to": 960,
+              "illustrative": true,
+              "notes": "960 = 8 clinics × ~4 a day × 30 days, invented — show 'Illustrative' under the counter. 9:16: transpose to clinics as columns, days as rows. Keep the counter out of the pip corners and caption bands."
+            },
+            "cues": {
+              "grid": "booking",
+              "chain": "chain",
+              "fill": "could",
+              "total": "over"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "05",
+      "section": "Introduce the solution",
+      "view": "podcast-host",
+      "line": "Hey Anaya responds to all your leads instantly and in their preferred language, crafts messages that convert, and then schedules the appointments.",
+      "prompt": {
+        "cast": "CHAR_HOST",
+        "location": "LOC_STUDIO_HOST",
+        "line": [
+          {
+            "from": 0.0,
+            "to": 0.4,
+            "silence": true
+          },
+          {
+            "from": 0.4,
+            "to": 3.0,
+            "say": "Hey Anaya responds to all your leads instantly"
+          },
+          {
+            "from": 3.0,
+            "to": 4.7,
+            "say": "and in their preferred language,"
+          },
+          {
+            "from": 4.7,
+            "to": 6.1,
+            "say": "crafts messages that convert,"
+          },
+          {
+            "from": 6.1,
+            "to": 7.8,
+            "say": "and then schedules the appointments."
+          },
+          {
+            "from": 7.8,
+            "to": 8.0,
+            "pause": true
+          }
+        ],
+        "delivery": "Brighter and confident, the turn of the story; crisp and even on \"instantly\", keeping a steady pace through the list without rushing.",
+        "gesture": "on \"responds\" he opens one hand toward frame right, then marks each item of the list with a small, light hand movement."
+      },
+      "edit": {
+        "from": "pip",
+        "host": [
+          [
+            "@start",
+            "full"
+          ],
+          [
+            "responds-0.1",
+            "split"
+          ]
+        ],
+        "grade": "warm",
+        "scenes": [
+          {
+            "name": "AnayaBooksIt",
+            "layer": "beside",
+            "idea": "The same kind of phone as the hook, but now HeyAnaya is on it, and it does each thing as he names it. On \"responds\" Mariam's Arabic enquiry arrives; on \"instantly\" Anaya's reply appears with a 'Replied in 3 s' chip. On \"language\" a small EN→AR chip flips and the reply is in Gulf Arabic (grey English line beneath). On \"crafts\" the reply offers two concrete slots with the doctor's name; on \"convert\" she taps 'Thu 4:30 PM'. On \"schedules\" a teal confirmation card slides out of the chat and on \"appointments\" it drops into the clinic calendar — the dashed empty slot from beat 03, now filled.",
+            "props": {
+              "patient": "Mariam A.",
+              "incoming_ar": "مرحبا، عندكم موعد هالأسبوع؟",
+              "incoming_en": "Hi, any appointment this week?",
+              "reply_ar": "أهلاً مريم! عندنا موعد مع د. ليلى يوم الخميس ٤:٣٠ أو السبت ١١ الصبح. أي واحد يناسبك؟",
+              "reply_en": "Hi Mariam! Dr. Layla has Thu 4:30 PM or Sat 11 AM. Which suits you?",
+              "response_chip": "Replied in 3 s",
+              "language_chip": "EN → AR",
+              "quick_replies": [
+                "Thu 4:30 PM",
+                "Sat 11:00 AM"
+              ],
+              "booking": {
+                "title": "Booked",
+                "detail": "Thu 4:30 PM · Dermatology · Jumeirah",
+                "doctor": "Dr. Layla"
+              },
+              "notes": "Response time and names are illustrative. Generic green chat styling, HeyAnaya shown as the sender name with the brand mark (logo-white.png on dark), no WhatsApp branding. Arabic copy needs a native-speaker check."
+            },
+            "cues": {
+              "incoming": "responds",
+              "reply": "instantly",
+              "language": "language",
+              "craft": "crafts",
+              "tap": "convert",
+              "confirm": "schedules",
+              "calendar": "appointments"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "06",
+      "section": "Close",
+      "view": "podcast-host",
+      "line": "Because growing a clinic chain isn't just about generating more leads.",
+      "prompt": {
+        "cast": "CHAR_HOST",
+        "location": "LOC_STUDIO_HOST",
+        "line": [
+          {
+            "from": 0.0,
+            "to": 0.4,
+            "silence": true
+          },
+          {
+            "from": 0.4,
+            "to": 2.4,
+            "say": "Because growing a clinic chain"
+          },
+          {
+            "from": 2.5,
+            "to": 4.8,
+            "say": "isn't just about generating more leads."
+          },
+          {
+            "from": 4.8,
+            "to": 8.0,
+            "pause": true
+          }
+        ],
+        "delivery": "Calm and certain, sharing a conviction, a thoughtful beat before \"generating more leads\".",
+        "gesture": "on \"generating\" he makes a small pouring motion with one hand above the table, then lowers it."
+      },
+      "edit": {
+        "from": "split",
+        "host": [
+          [
+            "@start",
+            "full"
+          ],
+          [
+            "generating-0.1",
+            "pip"
+          ]
+        ],
+        "push": 0.06,
+        "scenes": [
+          {
+            "name": "LeakyFunnel",
+            "layer": "under",
+            "idea": "A clean funnel on navy: lead dots pour in from the top (ad spend tap). On \"more\" the tap opens wider and the inflow doubles — but the funnel's sides have gaps marked 'No reply', 'After hours', 'Wrong language', and most of the extra dots spill out through them; the bookings tray at the bottom barely rises. More leads, same leak.",
+            "props": {
+              "tap_label": "Ad spend",
+              "inflow_label": "Leads ×2",
+              "leaks": [
+                "No reply",
+                "After hours",
+                "Wrong language"
+              ],
+              "tray_label": "Bookings",
+              "notes": "No numbers — dot flow only. Keep the funnel centred-right in 16:9 so the bottom-left pip corner and caption band stay clear; in 9:16 keep the leak labels below the top-right pip."
+            },
+            "cues": {
+              "funnel": "generating",
+              "more": "more",
+              "spill": "leads"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "07",
+      "section": "Close",
+      "view": "podcast-host",
+      "line": "It's about turning more of the leads you already have into bookings.",
+      "prompt": {
+        "cast": "CHAR_HOST",
+        "location": "LOC_STUDIO_HOST",
+        "line": [
+          {
+            "from": 0.0,
+            "to": 0.4,
+            "silence": true
+          },
+          {
+            "from": 0.4,
+            "to": 3.0,
+            "say": "It's about turning more of the leads"
+          },
+          {
+            "from": 3.1,
+            "to": 5.2,
+            "say": "you already have into bookings."
+          },
+          {
+            "from": 5.2,
+            "to": 8.0,
+            "pause": true
+          }
+        ],
+        "delivery": "Warm and resolved, landing firmly on \"bookings\" with a small, assured smile.",
+        "gesture": "on \"bookings\" he sets one hand down flat on the table toward frame right."
+      },
+      "edit": {
+        "from": "pip",
+        "host": [
+          [
+            "@start",
+            "split"
+          ]
+        ],
+        "grade": "warm",
+        "scenes": [
+          {
+            "name": "SealedFunnel",
+            "layer": "beside",
+            "idea": "The same funnel, answered. On \"turning\" teal HeyAnaya patches seal each leak gap; on \"leads\" the dots already inside stop spilling and flow straight down; on \"already\" the tap at the top closes to its original trickle — no new spend. On \"bookings\" the dots land as teal appointment blocks filling a week calendar at the bottom. Same leads, more bookings.",
+            "props": {
+              "patch_label": "HeyAnaya",
+              "tap_label": "Same ad spend",
+              "calendar_label": "Bookings this week",
+              "notes": "Mirror of LeakyFunnel so the change reads instantly; no numbers. The patches may carry the logo-white.png mark."
+            },
+            "cues": {
+              "seal": "turning",
+              "flow": "leads",
+              "tap": "already",
+              "fill": "bookings"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

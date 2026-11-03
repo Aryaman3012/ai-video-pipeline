@@ -1,0 +1,26 @@
+{
+ "slug": "heyanaya-script3",
+ "flow": "storyboard",
+ "stage": "render",
+ "format": {
+  "platform": "Meta feed + Reels",
+  "aspect_ratio": "16:9",
+  "fps": 24,
+  "runtime_target_s": 45,
+  "generator": {
+   "name": "veo",
+   "model": "Veo 3.1 Fast"
+  }
+ },
+ "current_scene": null,
+ "current_take": null,
+ "approved": {
+  "storyboard": true,
+  "audit": false,
+  "vision": false,
+  "breakdown": false,
+  "broll": false,
+  "final": false
+ },
+ "updated_at": "2026-11-04T12:00:00+0530"
+}

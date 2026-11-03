@@ -1,0 +1,59 @@
+{
+  "scene_id": "clip-07",
+  "intent": "Close: It's about turning more of the leads you already have into bookings.",
+  "view": "podcast-host",
+  "generator": "veo",
+  "continuity_inputs": [
+    "01_vision/refs/host_podcast.jpg"
+  ],
+  "acceptance_criteria": [
+    "Same person, wardrobe and set as the first frame",
+    "Every word is spoken, in order, lip-synced",
+    "Locked-off camera, framing as the template states; nothing new enters the shot",
+    "Silent head and tail: mouth closed and relaxed"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "slots": {
+        "cast": "CHAR_HOST",
+        "location": "LOC_STUDIO_HOST",
+        "line": [
+          {
+            "from": 0,
+            "to": 0.4,
+            "silence": true
+          },
+          {
+            "from": 0.4,
+            "to": 3,
+            "say": "It's about turning more of the leads"
+          },
+          {
+            "from": 3.1,
+            "to": 5.2,
+            "say": "you already have into bookings."
+          },
+          {
+            "from": 5.2,
+            "to": 8,
+            "pause": true
+          }
+        ],
+        "delivery": "Warm and resolved, landing firmly on \"bookings\" with a small, assured smile.",
+        "gesture": "on \"bookings\" he sets one hand down flat on the table toward frame right."
+      },
+      "duration_s": 8,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "generated_at": null,
+      "model": "Veo 3.1 Fast",
+      "mode": "image_to_video",
+      "prompt": "Model: Veo 3.1 Fast. Duration: 8 seconds.\n\nUse the reference image as the first frame. Keep the man, his white kandura and ghutra with black agal, the mic, mug, table and warm dark studio exactly as shown. Locked-off medium shot, shallow depth of field, cinematic podcast look. He sits centred in the frame. Full-frame 16:9 picture that fills the frame edge to edge.\n\nSpeaker: the Emirati man at the mic, an Arabic-accented English speaker from the UAE, talking to an unseen guest slightly off-camera.\nOnly the man in the reference image speaks. He is the single speaker in this clip: every spoken word comes from his mouth, lip-synced to his lips. The unseen guest stays completely silent and off-camera, and there is no narrator or voice-over.\nLine:\n0.0–0.4s: [SILENCE]\n0.4–3.0s: \"It's about turning more of the leads\"\n3.1–5.2s: \"you already have into bookings.\"\n5.2–8.0s: [PAUSE]\nDelivery: clear Emirati-accented English, soft Gulf Arabic intonation, lightly rolled r's, calm, deep, confident male voice. Warm and resolved, landing firmly on \"bookings\" with a small, assured smile. Natural conversational podcast pace, natural hand gestures while speaking.\nGesture: on \"bookings\" he sets one hand down flat on the table toward frame right.\nPause: during [PAUSE] he stops talking completely, mouth closed, and listens to the guest with a slight nod and steady eye contact. Only room tone.\nHe speaks only the words inside quotation marks. The timestamps and [PAUSE] are not spoken.\n\nAudio: crisp, clear, broadcast-quality podcast voice from a studio microphone. Bright and present, with clean, distinct consonants and natural high-end detail, like a professionally mixed podcast. Acoustically treated room, quiet room tone, no music, no other voices.\nAvoid: American or British accent, on-screen text, subtitles, black bars, pillarbox or letterbox borders, extra people, a second voice, off-screen speaker or narrator, lips out of sync with the words, warped hands, talking during the pause, cutting off the last word, muffled, muddy, boomy, bass-heavy, distant or low-quality voice.",
+      "keyframe": "01_vision/refs/host_podcast.jpg",
+      "output_path": "04_clips/clip-07_take-01.mp4"
+    }
+  ]
+}

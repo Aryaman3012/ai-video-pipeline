@@ -1,0 +1,145 @@
+{
+ "slug": "heyanaya-script3",
+ "model": "medium",
+ "clips": [
+  {
+   "id": "01",
+   "take": "Man_speaking_in_clinic_lounge_d1151a30.mp4",
+   "similarity": 1.0,
+   "heard": "A few unanswered WhatsApp enquiries don't seem like a big deal. Now multiply that across all your clinic locations.",
+   "trim": {
+    "start": 0.28,
+    "end": 7.75
+   },
+   "duration_s": 7.47,
+   "crop": {
+    "h": 720,
+    "w": 1080,
+    "x": 100,
+    "y": 0
+   },
+   "audio": true,
+   "src": "projects/heyanaya-script3/clips/01.mp4"
+  },
+  {
+   "id": "02",
+   "take": "Man_speaking_in_clinic_lounge_98f359da.mp4",
+   "similarity": 1.0,
+   "heard": "One at your first clinic, another at your second, and more across the rest of your network.",
+   "trim": {
+    "start": 0.37,
+    "end": 7.65
+   },
+   "duration_s": 7.28,
+   "crop": {
+    "h": 720,
+    "w": 1080,
+    "x": 100,
+    "y": 0
+   },
+   "audio": true,
+   "src": "projects/heyanaya-script3/clips/02.mp4"
+  },
+  {
+   "id": "03",
+   "take": "Man_speaking_in_clinic_lounge_a9985e0a.mp4",
+   "similarity": 1.0,
+   "heard": "Each one could be a potential patient you paid to attract, but never converted into a booking.",
+   "trim": {
+    "start": 0.68,
+    "end": 6.75
+   },
+   "duration_s": 6.07,
+   "crop": {
+    "h": 720,
+    "w": 1080,
+    "x": 100,
+    "y": 0
+   },
+   "audio": true,
+   "src": "projects/heyanaya-script3/clips/03.mp4"
+  },
+  {
+   "id": "04",
+   "take": "Man_speaking_in_clinic_lounge_abbd9a06.mp4",
+   "similarity": 1.0,
+   "heard": "Now imagine how many booking opportunities your entire chain could be missing over a month.",
+   "trim": {
+    "start": 0.38,
+    "end": 7.2
+   },
+   "duration_s": 6.82,
+   "crop": {
+    "h": 720,
+    "w": 1080,
+    "x": 100,
+    "y": 0
+   },
+   "audio": true,
+   "src": "projects/heyanaya-script3/clips/04.mp4"
+  },
+  {
+   "id": "05",
+   "take": "Man_speaking_about_Anaya_leads_ad0f9276.mp4",
+   "similarity": 1.0,
+   "heard": "Hey Anaya responds to all your leads instantly and in their preferred language, crafts messages that convert, and then schedules the appointments.",
+   "trim": {
+    "start": 0.0,
+    "end": 7.95
+   },
+   "duration_s": 7.95,
+   "crop": {
+    "h": 720,
+    "w": 1080,
+    "x": 100,
+    "y": 0
+   },
+   "audio": true,
+   "src": "projects/heyanaya-script3/clips/05.mp4"
+  },
+  {
+   "id": "06",
+   "take": "Man_speaking_in_clinic_lounge_56b251e6.mp4",
+   "similarity": 1.0,
+   "heard": "Because growing a clinic chain isn't just about generating more leads.",
+   "trim": {
+    "start": 0.18,
+    "end": 5.71
+   },
+   "duration_s": 5.53,
+   "crop": {
+    "h": 720,
+    "w": 1080,
+    "x": 100,
+    "y": 0
+   },
+   "audio": true,
+   "src": "projects/heyanaya-script3/clips/06.mp4"
+  },
+  {
+   "id": "07",
+   "take": "Man_speaking_in_clinic_lounge_e779e1ca.mp4",
+   "similarity": 1.0,
+   "heard": "It's about turning more of the leads you already have into bookings.",
+   "trim": {
+    "start": 0.63,
+    "end": 5.6
+   },
+   "duration_s": 4.97,
+   "crop": {
+    "h": 720,
+    "w": 1080,
+    "x": 100,
+    "y": 0
+   },
+   "audio": true,
+   "src": "projects/heyanaya-script3/clips/07.mp4"
+  }
+ ],
+ "missing": [],
+ "unused_takes": [],
+ "source": {
+  "w": 1080,
+  "h": 720
+ }
+}

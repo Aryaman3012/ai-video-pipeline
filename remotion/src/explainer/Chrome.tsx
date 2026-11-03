@@ -58,8 +58,13 @@ export const Grain: React.FC<{ opacity?: number }> = ({ opacity = 0.22 }) => {
   );
 };
 
-/** Built-in scene: brand bug. Cues: `in` (default 0), `out` (default in + 1.5). */
-export const LogoBug: React.FC = () => {
+/**
+ * Built-in scene: brand bug. Cues: `in` (default 0), `out` (default in + 1.5).
+ * Props: `y` — top edge as a fraction of frame height. Defaults keep it off the host's face:
+ * 16:9 0.1 (above a seated host's head in full, over the panel in split); 9:16 0.035 (top margin,
+ * above the head in full and split). Set it explicitly when a scene owns that space.
+ */
+export const LogoBug: React.FC<{ y?: number }> = ({ y }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const cue = useCues();
@@ -71,7 +76,7 @@ export const LogoBug: React.FC = () => {
   const p = useIn(tin, 14);
   const out = interpolate(frame, [tout * fps, (tout + 0.15) * fps], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: vertical ? height * 0.12 : height * 0.1, display: "flex", justifyContent: "center", opacity: Math.min(p, out), transform: `scale(${0.9 + 0.1 * p})` }}>
+    <div style={{ position: "absolute", left: 0, right: 0, top: height * (y ?? (vertical ? 0.035 : 0.1)), display: "flex", justifyContent: "center", opacity: Math.min(p, out), transform: `scale(${0.9 + 0.1 * p})` }}>
       <div style={{ display: "flex", alignItems: "center", gap: 18 * u, background: C.black, padding: `${16 * u}px ${28 * u}px`, borderRadius: 16 * u }}>
         {brand.logo_light && <Img src={staticFile(brand.logo_light)} style={{ width: 48 * u, height: 48 * u, objectFit: "contain" }} />}
         <span style={{ fontFamily: SANS, fontWeight: 700, fontSize: 42 * u, color: "#fff", letterSpacing: "-0.01em" }}>{brand.name}</span>

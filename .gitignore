@@ -13,3 +13,6 @@ projects/*/01_vision/refs/*.jpg
 projects/*/03_prompts/keyframes/*.png
 projects/*/05_ingest/clips/
 .DS_Store
+projects/*/05_ingest/wav/
+projects/*/05_ingest/raw/
+projects/*/05_review/stills/*_*.jpg
