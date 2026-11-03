@@ -1,0 +1,28 @@
+{
+  "scene_id": "scene-001",
+  "intent": "Hook: a ringing phone nobody answers",
+  "continuity_inputs": [],
+  "acceptance_criteria": [
+    "Phone is the clear subject and in focus",
+    "Line light visibly blinks",
+    "Camera stays static",
+    "Background chair is empty"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "model": "gen4.5",
+      "mode": "text_to_video",
+      "prompt": "Locked-off close-up of a white desk phone on a clinic reception counter, its red line light blinking as it rings. An empty office chair sits softly out of focus behind it in a bright, modern Indian clinic reception with a white counter, a desk phone, potted plants and a small waiting area behind. Cool morning daylight from the left. Cinematic, naturalistic, shallow depth of field, subtle film grain.",
+      "keyframe": null,
+      "duration_s": 6,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "credits_estimate": 72,
+      "output_path": "04_clips/scene-001_take-01.mp4",
+      "generated_at": "2026-09-16T10:00:00+05:30"
+    }
+  ]
+}

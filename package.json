@@ -1,0 +1,12 @@
+{
+  "name": "ai-video-pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "new": "bash tools/new-project.sh",
+    "validate": "node tools/validate.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.20.0"
+  }
+}

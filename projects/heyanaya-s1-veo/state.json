@@ -1,0 +1,24 @@
+{
+  "slug": "heyanaya-s1-veo",
+  "stage": "prompting",
+  "format": {
+    "platform": "Meta feed / LinkedIn",
+    "aspect_ratio": "16:9",
+    "fps": 24,
+    "runtime_target_s": 60,
+    "generator": {
+      "name": "veo",
+      "model": "Veo 3.1 Fast"
+    }
+  },
+  "current_scene": "scene-001",
+  "current_take": 1,
+  "approved": {
+    "audit": true,
+    "vision": true,
+    "breakdown": true,
+    "broll": false,
+    "final": false
+  },
+  "updated_at": "2026-11-04T00:39:24+0530"
+}

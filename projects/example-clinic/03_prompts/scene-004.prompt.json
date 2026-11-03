@@ -1,0 +1,31 @@
+{
+  "scene_id": "scene-004",
+  "intent": "The turn: calm arrives",
+  "continuity_inputs": [
+    "CHAR_RECEPTIONIST",
+    "LOC_RECEPTION"
+  ],
+  "acceptance_criteria": [
+    "Same wardrobe and hair as scene-002",
+    "Camera moves forward smoothly",
+    "Visible shift from tense to relaxed",
+    "Light warms over the shot"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "model": "gen4.5",
+      "mode": "image_to_video",
+      "prompt": "Slow dolly-in toward the woman at the counter. She exhales, her shoulders relax, and she smiles as the phone's light beside her glows a steady green. Warm sunlight gradually fills the room from the left. Calm, unhurried pacing.",
+      "keyframe": "03_prompts/keyframes/scene-002_last.png",
+      "duration_s": 6,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "credits_estimate": 72,
+      "output_path": "04_clips/scene-004_take-01.mp4",
+      "generated_at": "2026-09-16T10:00:00+05:30"
+    }
+  ]
+}

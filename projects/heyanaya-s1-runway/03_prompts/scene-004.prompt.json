@@ -1,0 +1,51 @@
+{
+  "scene_id": "scene-004",
+  "intent": "Owner confirms the spend",
+  "view": "podcast-guest",
+  "continuity_inputs": [
+    "CHAR_OWNER.reference_image"
+  ],
+  "acceptance_criteria": [
+    "Same person, wardrobe and set as the first frame",
+    "Every word is spoken, in order, lip-synced",
+    "Mouth closed and listening through the [PAUSE] tail",
+    "Locked-off medium shot, full frame, nothing new in shot"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "slots": {
+        "line": [
+          {
+            "from": 0,
+            "to": 1.5,
+            "say": "Of course."
+          },
+          {
+            "from": 1.5,
+            "to": 5,
+            "say": "We're constantly investing in marketing to bring in new patients."
+          },
+          {
+            "from": 5,
+            "to": 8,
+            "pause": true
+          }
+        ],
+        "delivery": "Matter-of-fact and assured."
+      },
+      "duration_s": 8,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "generated_at": null,
+      "model": "gen4.5",
+      "mode": "image_to_video",
+      "prompt": "Locked-off static camera, medium shot, shallow depth of field, cinematic podcast look. She sits centred in the frame. The woman at the mic talks to an unseen host slightly off-camera to her right.\n[0.0–5.0s] She talks to the host with natural hand gestures, lips moving in conversation.\n[5.0–8.0s] She stops talking, mouth closed, and listens to the host with a slight nod and steady eye contact.\nBlank, unlettered surfaces, a clean picture free of captions, the picture fills the full frame edge to edge, a single person in frame, natural, well-formed hands.",
+      "keyframe": "01_vision/refs/owner_podcast.png",
+      "output_path": "04_clips/scene-004_take-01.mp4"
+    }
+  ],
+  "generator": "runway"
+}

@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "breakdown.schema.json",
+  "title": "Script Breakdown",
+  "type": "object",
+  "required": [
+    "beats",
+    "scenes",
+    "totals"
+  ],
+  "properties": {
+    "wpm": {
+      "type": "number"
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "purpose"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^beat-\\d{2,3}$"
+          },
+          "text": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "beat_id",
+          "vo_text",
+          "duration_s",
+          "type",
+          "intent",
+          "transition_in",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/sceneId"
+          },
+          "beat_id": {
+            "type": "string"
+          },
+          "vo_text": {
+            "type": "string"
+          },
+          "duration_s": {
+            "type": "number",
+            "minimum": 2,
+            "maximum": 10
+          },
+          "type": {
+            "enum": [
+              "A_ROLL",
+              "B_ROLL"
+            ]
+          },
+          "intent": {
+            "type": "string"
+          },
+          "view": {
+            "$ref": "scene-prompt.schema.json#/properties/view",
+            "description": "A_ROLL only: prompt template for this shot (templates/prompts/README.md)"
+          },
+          "shot": {
+            "type": "object",
+            "required": [
+              "size",
+              "movement",
+              "subject",
+              "action"
+            ],
+            "properties": {
+              "size": {
+                "type": "string"
+              },
+              "angle": {
+                "type": "string"
+              },
+              "movement": {
+                "type": "string"
+              },
+              "subject": {
+                "type": "string"
+              },
+              "action": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              }
+            }
+          },
+          "broll": {
+            "$ref": "edl.schema.json#/$defs/templateRef"
+          },
+          "overlays": {
+            "type": "array",
+            "items": {
+              "$ref": "edl.schema.json#/$defs/overlay"
+            }
+          },
+          "transition_in": {
+            "$ref": "edl.schema.json#/$defs/transition"
+          },
+          "continuity_from": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/sceneId"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "cast": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "prompted",
+              "generated",
+              "accepted",
+              "fallback"
+            ]
+          },
+          "vo_start_s": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Measured start of this scene's VO window, from 00_script/vo.words.json"
+          },
+          "vo_end_s": {
+            "type": "number",
+            "description": "Measured end of this scene's VO window"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "A_ROLL"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "shot"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "B_ROLL"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "broll"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": [
+        "runtime_s",
+        "a_roll_s",
+        "b_roll_s",
+        "scene_count"
+      ],
+      "properties": {
+        "runtime_s": {
+          "type": "number"
+        },
+        "a_roll_s": {
+          "type": "number"
+        },
+        "b_roll_s": {
+          "type": "number"
+        },
+        "scene_count": {
+          "type": "integer"
+        },
+        "est_credits": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sceneId": {
+      "type": "string",
+      "pattern": "^scene-\\d{3}[a-z]?$"
+    }
+  }
+}

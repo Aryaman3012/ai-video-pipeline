@@ -1,0 +1,129 @@
+{
+  "slug": "example-clinic",
+  "version": 1,
+  "fps": 24,
+  "width": 1920,
+  "height": 1080,
+  "theme": {
+    "colors": {
+      "background": "#0F1B2D",
+      "primary": "#2EC4B6",
+      "accent": "#FFB547",
+      "text": "#F5F7FA",
+      "muted": "#A9B4C2"
+    },
+    "fonts": {
+      "heading": "Inter, Helvetica, Arial, sans-serif",
+      "body": "Inter, Helvetica, Arial, sans-serif"
+    },
+    "motion": {
+      "damping": 18,
+      "stiffness": 120,
+      "entrance_frames": 12
+    }
+  },
+  "segments": [
+    {
+      "scene_id": "scene-001",
+      "kind": "clip",
+      "duration_s": 4,
+      "src": "projects/example-clinic/clips/scene-001_take-01.mp4",
+      "in_s": 0.5
+    },
+    {
+      "scene_id": "scene-002",
+      "kind": "clip",
+      "duration_s": 5,
+      "src": "projects/example-clinic/clips/scene-002_take-02.mp4",
+      "in_s": 0.0,
+      "overlays": [
+        {
+          "template": "LowerThird",
+          "props": {
+            "title": "9:00 AM",
+            "subtitle": "Monday rush"
+          },
+          "from_s": 0.5,
+          "to_s": 4
+        }
+      ]
+    },
+    {
+      "scene_id": "scene-003",
+      "kind": "broll",
+      "duration_s": 4,
+      "broll": {
+        "template": "KineticText",
+        "props": {
+          "text": "Each missed call is a patient who books somewhere else.",
+          "highlight": [
+            "missed",
+            "somewhere",
+            "else"
+          ]
+        }
+      },
+      "transition_in": "cut"
+    },
+    {
+      "scene_id": "scene-004",
+      "kind": "clip",
+      "duration_s": 4,
+      "src": "projects/example-clinic/clips/scene-004_take-01.mp4",
+      "in_s": 0.0,
+      "transition_in": "fade"
+    },
+    {
+      "scene_id": "scene-005",
+      "kind": "broll",
+      "duration_s": 5,
+      "broll": {
+        "template": "BulletList",
+        "props": {
+          "title": "Your AI front desk",
+          "items": [
+            "Answers every call",
+            "Books the appointment",
+            "Sends a WhatsApp reminder"
+          ]
+        }
+      },
+      "transition_in": "slide"
+    },
+    {
+      "scene_id": "scene-006",
+      "kind": "clip",
+      "duration_s": 5,
+      "src": "projects/example-clinic/clips/scene-006_take-01.mp4",
+      "in_s": 0.0,
+      "transition_in": "slide"
+    },
+    {
+      "scene_id": "scene-007",
+      "kind": "broll",
+      "duration_s": 3,
+      "broll": {
+        "template": "TitleCard",
+        "props": {
+          "title": "Never miss a patient call again"
+        }
+      },
+      "transition_in": "fade"
+    },
+    {
+      "scene_id": "scene-008",
+      "kind": "broll",
+      "duration_s": 3,
+      "broll": {
+        "template": "CTA",
+        "props": {
+          "headline": "Book a demo today",
+          "action": "Book a demo",
+          "url": "example.com/demo"
+        }
+      },
+      "transition_in": "cut"
+    }
+  ],
+  "audio": []
+}

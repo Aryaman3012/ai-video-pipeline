@@ -1,0 +1,50 @@
+{
+  "scene_id": "scene-001",
+  "intent": "Hook: the twenty percent question",
+  "view": "podcast-host",
+  "continuity_inputs": [
+    "CHAR_HOST.reference_image"
+  ],
+  "acceptance_criteria": [
+    "Same person, wardrobe and set as the first frame",
+    "Every word is spoken, in order, lip-synced",
+    "Mouth closed and listening through the [PAUSE] tail",
+    "Locked-off medium shot, full frame, nothing new in shot"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "slots": {
+        "line": [
+          {
+            "from": 0,
+            "to": 3,
+            "say": "What if you could grow your clinic chain's revenue"
+          },
+          {
+            "from": 3,
+            "to": 6,
+            "say": "by twenty percent without spending more on marketing?"
+          },
+          {
+            "from": 6,
+            "to": 8,
+            "pause": true
+          }
+        ]
+      },
+      "duration_s": 8,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "generated_at": null,
+      "model": "gen4.5",
+      "mode": "image_to_video",
+      "prompt": "Locked-off static camera, medium shot, shallow depth of field, cinematic podcast look. He sits centred in the frame. The Emirati man at the mic talks to an unseen guest slightly off-camera.\n[0.0–6.0s] He talks to the guest with natural hand gestures, lips moving in conversation.\n[6.0–8.0s] He stops talking, mouth closed, and listens to the guest with a slight nod and steady eye contact.\nBlank, unlettered surfaces, a clean picture free of captions, the picture fills the full frame edge to edge, a single person in frame, natural, well-formed hands.",
+      "keyframe": "01_vision/refs/host_podcast.png",
+      "output_path": "04_clips/scene-001_take-01.mp4"
+    }
+  ],
+  "generator": "runway"
+}

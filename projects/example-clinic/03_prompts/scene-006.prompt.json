@@ -1,0 +1,31 @@
+{
+  "scene_id": "scene-006",
+  "intent": "Payoff: attention on the patient",
+  "continuity_inputs": [
+    "CHAR_RECEPTIONIST",
+    "LOC_RECEPTION"
+  ],
+  "acceptance_criteria": [
+    "Receptionist identity consistent",
+    "Elderly patient enters and is greeted",
+    "Warm lighting from the left",
+    "Faces stay stable through the shot"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "model": "gen4.5",
+      "mode": "image_to_video",
+      "prompt": "Slow push-in, medium close-up. The woman looks up and greets an elderly man with a white moustache arriving at the counter, then laughs warmly with him. Warm window light from the left. Relaxed, friendly pacing.",
+      "keyframe": "03_prompts/keyframes/scene-004_last.png",
+      "duration_s": 6,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "credits_estimate": 72,
+      "output_path": "04_clips/scene-006_take-01.mp4",
+      "generated_at": "2026-09-16T10:00:00+05:30"
+    }
+  ]
+}

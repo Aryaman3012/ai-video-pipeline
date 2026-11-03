@@ -1,0 +1,9 @@
+{
+  "slug": "__SLUG__",
+  "stage": "audit",
+  "format": null,
+  "current_scene": null,
+  "current_take": null,
+  "approved": { "audit": false, "vision": false, "breakdown": false, "broll": false, "final": false },
+  "updated_at": "__NOW__"
+}

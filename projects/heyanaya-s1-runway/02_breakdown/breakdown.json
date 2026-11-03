@@ -1,0 +1,157 @@
+{
+  "beats": [
+    {
+      "id": "beat-01",
+      "text": "What if you could grow your clinic chain's revenue by twenty percent without spending more on marketing?",
+      "purpose": "Hook: the twenty percent question"
+    },
+    {
+      "id": "beat-02",
+      "text": "Twenty percent? Without increasing our marketing budget? How? But how do I actually see that across all my clinics?",
+      "purpose": "Owner reacts: surprise, then the real question"
+    },
+    {
+      "id": "beat-03",
+      "text": "Let me ask you something. You're running multiple clinics, right? You're spending money to generate enquiries across all those locations?",
+      "purpose": "Host frames the multi-clinic spend"
+    },
+    {
+      "id": "beat-04",
+      "text": "Of course. We're constantly investing in marketing to bring in new patients.",
+      "purpose": "Owner confirms the spend"
+    },
+    {
+      "id": "beat-05",
+      "text": "And do you know exactly how many of those enquiries turn into booked appointments?",
+      "purpose": "Host asks the conversion question"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-001",
+      "beat_id": "beat-01",
+      "vo_text": "What if you could grow your clinic chain's revenue by twenty percent without spending more on marketing?",
+      "duration_s": 6.5,
+      "type": "A_ROLL",
+      "view": "podcast-host",
+      "intent": "Hook: the twenty percent question",
+      "shot": {
+        "size": "medium",
+        "angle": "eye-level",
+        "movement": "locked-off",
+        "subject": "CHAR_HOST",
+        "action": "talks to the off-camera guest",
+        "location": "LOC_STUDIO_HOST"
+      },
+      "transition_in": "cut",
+      "continuity_from": null,
+      "cast": [
+        "CHAR_HOST",
+        "LOC_STUDIO_HOST"
+      ],
+      "status": "prompted"
+    },
+    {
+      "id": "scene-002",
+      "beat_id": "beat-02",
+      "vo_text": "Twenty percent? Without increasing our marketing budget? How? But how do I actually see that across all my clinics?",
+      "duration_s": 7.8,
+      "type": "A_ROLL",
+      "view": "podcast-guest",
+      "intent": "Owner reacts: surprise, then the real question",
+      "shot": {
+        "size": "medium",
+        "angle": "eye-level",
+        "movement": "locked-off",
+        "subject": "CHAR_OWNER",
+        "action": "talks to the off-camera host",
+        "location": "LOC_STUDIO_GUEST"
+      },
+      "transition_in": "cut",
+      "continuity_from": null,
+      "cast": [
+        "CHAR_OWNER",
+        "LOC_STUDIO_GUEST"
+      ],
+      "status": "prompted"
+    },
+    {
+      "id": "scene-003",
+      "beat_id": "beat-03",
+      "vo_text": "Let me ask you something. You're running multiple clinics, right? You're spending money to generate enquiries across all those locations?",
+      "duration_s": 7.8,
+      "type": "A_ROLL",
+      "view": "podcast-host",
+      "intent": "Host frames the multi-clinic spend",
+      "shot": {
+        "size": "medium",
+        "angle": "eye-level",
+        "movement": "locked-off",
+        "subject": "CHAR_HOST",
+        "action": "talks to the off-camera guest",
+        "location": "LOC_STUDIO_HOST"
+      },
+      "transition_in": "cut",
+      "continuity_from": "scene-001",
+      "cast": [
+        "CHAR_HOST",
+        "LOC_STUDIO_HOST"
+      ],
+      "status": "prompted"
+    },
+    {
+      "id": "scene-004",
+      "beat_id": "beat-04",
+      "vo_text": "Of course. We're constantly investing in marketing to bring in new patients.",
+      "duration_s": 5,
+      "type": "A_ROLL",
+      "view": "podcast-guest",
+      "intent": "Owner confirms the spend",
+      "shot": {
+        "size": "medium",
+        "angle": "eye-level",
+        "movement": "locked-off",
+        "subject": "CHAR_OWNER",
+        "action": "talks to the off-camera host",
+        "location": "LOC_STUDIO_GUEST"
+      },
+      "transition_in": "cut",
+      "continuity_from": "scene-002",
+      "cast": [
+        "CHAR_OWNER",
+        "LOC_STUDIO_GUEST"
+      ],
+      "status": "prompted"
+    },
+    {
+      "id": "scene-005",
+      "beat_id": "beat-05",
+      "vo_text": "And do you know exactly how many of those enquiries turn into booked appointments?",
+      "duration_s": 5.5,
+      "type": "A_ROLL",
+      "view": "podcast-host",
+      "intent": "Host asks the conversion question",
+      "shot": {
+        "size": "medium",
+        "angle": "eye-level",
+        "movement": "locked-off",
+        "subject": "CHAR_HOST",
+        "action": "talks to the off-camera guest",
+        "location": "LOC_STUDIO_HOST"
+      },
+      "transition_in": "cut",
+      "continuity_from": "scene-003",
+      "cast": [
+        "CHAR_HOST",
+        "LOC_STUDIO_HOST"
+      ],
+      "status": "prompted"
+    }
+  ],
+  "totals": {
+    "runtime_s": 32.6,
+    "a_roll_s": 32.6,
+    "b_roll_s": 0,
+    "scene_count": 5
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "scene_id": "scene-003",
+  "intent": "Host frames the multi-clinic spend",
+  "view": "podcast-host",
+  "continuity_inputs": [
+    "CHAR_HOST.reference_image"
+  ],
+  "acceptance_criteria": [
+    "Same person, wardrobe and set as the first frame",
+    "Every word is spoken, in order, lip-synced",
+    "Mouth closed and listening through the [PAUSE] tail",
+    "Locked-off medium shot, full frame, nothing new in shot"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "slots": {
+        "line": [
+          {
+            "from": 0,
+            "to": 3.5,
+            "say": "Let me ask you something. You're running multiple clinics, right?"
+          },
+          {
+            "from": 3.5,
+            "to": 7.8,
+            "say": "You're spending money to generate enquiries across all those locations?"
+          },
+          {
+            "from": 7.8,
+            "to": 8,
+            "pause": true
+          }
+        ]
+      },
+      "duration_s": 8,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "generated_at": null,
+      "model": "Veo 3.1 Fast",
+      "mode": "image_to_video",
+      "prompt": "Model: Veo 3.1 Fast. Duration: 8 seconds.\n\nUse the reference image as the first frame. Keep the man, his white kandura and ghutra with black agal, the mic, mug, table and warm dark studio exactly as shown. Locked-off medium shot, shallow depth of field, cinematic podcast look. He sits centred in the frame. Full-frame 16:9 picture that fills the frame edge to edge.\n\nSpeaker: the Emirati man at the mic, an Arabic-accented English speaker from the UAE, talking to an unseen guest slightly off-camera.\nOnly the man in the reference image speaks. He is the single speaker in this clip: every spoken word comes from his mouth, lip-synced to his lips. The unseen guest stays completely silent and off-camera, and there is no narrator or voice-over.\nLine:\n0.0–3.5s: \"Let me ask you something. You're running multiple clinics, right?\"\n3.5–7.8s: \"You're spending money to generate enquiries across all those locations?\"\n7.8–8.0s: [PAUSE]\nDelivery: clear Emirati-accented English, soft Gulf Arabic intonation, lightly rolled r's, calm, deep, confident male voice. Natural conversational podcast pace, natural hand gestures while speaking.\nPause: during [PAUSE] he stops talking completely, mouth closed, and listens to the guest with a slight nod and steady eye contact. Only room tone.\nHe speaks only the words inside quotation marks. The timestamps and [PAUSE] are not spoken.\n\nAudio: crisp, clear, broadcast-quality podcast voice from a studio microphone. Bright and present, with clean, distinct consonants and natural high-end detail, like a professionally mixed podcast. Acoustically treated room, quiet room tone, no music, no other voices.\nAvoid: American or British accent, on-screen text, subtitles, black bars, pillarbox or letterbox borders, extra people, a second voice, off-screen speaker or narrator, lips out of sync with the words, warped hands, talking during the pause, cutting off the last word, muffled, muddy, boomy, bass-heavy, distant or low-quality voice.",
+      "keyframe": "01_vision/refs/host_podcast.png",
+      "output_path": "04_clips/scene-003_take-01.mp4"
+    }
+  ],
+  "generator": "veo"
+}

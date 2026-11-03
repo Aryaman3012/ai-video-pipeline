@@ -1,0 +1,11 @@
+{
+  "slug": "example-clinic",
+  "stage": "assembly",
+  "current_scene": null,
+  "current_take": null,
+  "approved": {
+    "vision": true,
+    "breakdown": true
+  },
+  "updated_at": "2026-09-16T11:00:00+05:30"
+}

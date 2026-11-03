@@ -1,0 +1,221 @@
+{
+  "wpm": 150,
+  "beats": [
+    {
+      "id": "beat-01",
+      "text": "Every clinic knows the sound of a phone that nobody picks up. At nine in the morning, the front desk is juggling walk-ins, files and five ringing lines.",
+      "purpose": "hook + problem"
+    },
+    {
+      "id": "beat-02",
+      "text": "Each missed call is a patient who books somewhere else.",
+      "purpose": "cost"
+    },
+    {
+      "id": "beat-03",
+      "text": "Now imagine a receptionist that never takes a break. It answers every call, books the appointment, and sends a WhatsApp reminder.",
+      "purpose": "turn + solution"
+    },
+    {
+      "id": "beat-04",
+      "text": "Your staff get back to the patients in front of them.",
+      "purpose": "payoff"
+    },
+    {
+      "id": "beat-05",
+      "text": "Never miss a patient call again. Book a demo today.",
+      "purpose": "promise + CTA"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-001",
+      "beat_id": "beat-01",
+      "vo_text": "Every clinic knows the sound of a phone that nobody picks up.",
+      "duration_s": 4,
+      "type": "A_ROLL",
+      "intent": "Hook: the sound everyone recognises",
+      "shot": {
+        "size": "close-up",
+        "angle": "eye-level",
+        "movement": "locked-off",
+        "subject": "desk phone",
+        "action": "rings, line light blinks",
+        "location": "LOC_RECEPTION"
+      },
+      "transition_in": "cut",
+      "continuity_from": null,
+      "cast": [
+        "LOC_RECEPTION"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "scene-002",
+      "beat_id": "beat-01",
+      "vo_text": "At nine in the morning, the front desk is juggling walk-ins, files and five ringing lines.",
+      "duration_s": 5,
+      "type": "A_ROLL",
+      "intent": "Show the overload",
+      "shot": {
+        "size": "medium",
+        "angle": "eye-level",
+        "movement": "handheld, gentle",
+        "subject": "CHAR_RECEPTIONIST",
+        "action": "hands a file to a patient while glancing at the ringing phone",
+        "location": "LOC_RECEPTION"
+      },
+      "transition_in": "cut",
+      "continuity_from": "scene-001",
+      "cast": [
+        "CHAR_RECEPTIONIST",
+        "LOC_RECEPTION"
+      ],
+      "status": "accepted",
+      "overlays": [
+        {
+          "template": "LowerThird",
+          "props": {
+            "title": "9:00 AM",
+            "subtitle": "Monday rush"
+          },
+          "from_s": 0.5,
+          "to_s": 4
+        }
+      ]
+    },
+    {
+      "id": "scene-003",
+      "beat_id": "beat-02",
+      "vo_text": "Each missed call is a patient who books somewhere else.",
+      "duration_s": 4,
+      "type": "B_ROLL",
+      "intent": "Name the cost in words",
+      "broll": {
+        "template": "KineticText",
+        "props": {
+          "text": "Each missed call is a patient who books somewhere else.",
+          "highlight": [
+            "missed",
+            "somewhere",
+            "else"
+          ]
+        }
+      },
+      "transition_in": "cut",
+      "continuity_from": null,
+      "status": "accepted"
+    },
+    {
+      "id": "scene-004",
+      "beat_id": "beat-03",
+      "vo_text": "Now imagine a receptionist that never takes a break.",
+      "duration_s": 4,
+      "type": "A_ROLL",
+      "intent": "The turn: calm arrives",
+      "shot": {
+        "size": "medium wide",
+        "angle": "eye-level",
+        "movement": "slow dolly-in",
+        "subject": "CHAR_RECEPTIONIST",
+        "action": "exhales and smiles as the phone's light turns steady green",
+        "location": "LOC_RECEPTION"
+      },
+      "transition_in": "fade",
+      "continuity_from": "scene-002",
+      "cast": [
+        "CHAR_RECEPTIONIST",
+        "LOC_RECEPTION"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "scene-005",
+      "beat_id": "beat-03",
+      "vo_text": "It answers every call, books the appointment, and sends a WhatsApp reminder.",
+      "duration_s": 5,
+      "type": "B_ROLL",
+      "intent": "What it does, clearly",
+      "broll": {
+        "template": "BulletList",
+        "props": {
+          "title": "Your AI front desk",
+          "items": [
+            "Answers every call",
+            "Books the appointment",
+            "Sends a WhatsApp reminder"
+          ]
+        }
+      },
+      "transition_in": "slide",
+      "continuity_from": null,
+      "status": "accepted"
+    },
+    {
+      "id": "scene-006",
+      "beat_id": "beat-04",
+      "vo_text": "Your staff get back to the patients in front of them.",
+      "duration_s": 5,
+      "type": "A_ROLL",
+      "intent": "Payoff: human attention returns",
+      "shot": {
+        "size": "medium close-up",
+        "angle": "eye-level",
+        "movement": "slow push-in",
+        "subject": "CHAR_RECEPTIONIST",
+        "action": "greets an elderly patient at the counter and laughs with him",
+        "location": "LOC_RECEPTION"
+      },
+      "transition_in": "slide",
+      "continuity_from": "scene-004",
+      "cast": [
+        "CHAR_RECEPTIONIST",
+        "LOC_RECEPTION"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "scene-007",
+      "beat_id": "beat-05",
+      "vo_text": "Never miss a patient call again.",
+      "duration_s": 3,
+      "type": "B_ROLL",
+      "intent": "Promise",
+      "broll": {
+        "template": "TitleCard",
+        "props": {
+          "title": "Never miss a patient call again"
+        }
+      },
+      "transition_in": "fade",
+      "continuity_from": null,
+      "status": "accepted"
+    },
+    {
+      "id": "scene-008",
+      "beat_id": "beat-05",
+      "vo_text": "Book a demo today.",
+      "duration_s": 3,
+      "type": "B_ROLL",
+      "intent": "Call to action",
+      "broll": {
+        "template": "CTA",
+        "props": {
+          "headline": "Book a demo today",
+          "action": "Book a demo",
+          "url": "example.com/demo"
+        }
+      },
+      "transition_in": "cut",
+      "continuity_from": null,
+      "status": "accepted"
+    }
+  ],
+  "totals": {
+    "runtime_s": 33,
+    "a_roll_s": 18,
+    "b_roll_s": 15,
+    "scene_count": 8,
+    "est_credits": 324.0
+  }
+}

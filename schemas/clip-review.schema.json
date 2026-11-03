@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "clip-review.schema.json",
+  "title": "Clip Review",
+  "type": "object",
+  "required": [
+    "scene_id",
+    "reviews"
+  ],
+  "properties": {
+    "scene_id": {
+      "type": "string",
+      "pattern": "^scene-\\d{3}[a-z]?$"
+    },
+    "reviews": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "take",
+          "clip",
+          "probe",
+          "frames_dir",
+          "scores",
+          "decision",
+          "notes"
+        ],
+        "properties": {
+          "take": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "clip": {
+            "type": "string"
+          },
+          "probe": {
+            "type": "object",
+            "required": [
+              "duration_s",
+              "fps",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "duration_s": {
+                "type": "number"
+              },
+              "fps": {
+                "type": "number"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              }
+            }
+          },
+          "frames_dir": {
+            "type": "string"
+          },
+          "scores": {
+            "type": "object",
+            "required": [
+              "adherence",
+              "continuity",
+              "artifacts",
+              "motion",
+              "composition",
+              "vision_fit"
+            ],
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5
+            }
+          },
+          "criteria_results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "criterion",
+                "pass"
+              ],
+              "properties": {
+                "criterion": {
+                  "type": "string"
+                },
+                "pass": {
+                  "type": "boolean"
+                },
+                "evidence": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "at_s",
+                "description"
+              ],
+              "properties": {
+                "at_s": {
+                  "type": "number"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "decision": {
+            "enum": [
+              "accept",
+              "accept_trim",
+              "stitch",
+              "regenerate",
+              "fallback"
+            ]
+          },
+          "in_s": {
+            "type": "number",
+            "minimum": 0
+          },
+          "out_s": {
+            "type": "number"
+          },
+          "prompt_delta": {
+            "type": "string"
+          },
+          "fallback": {
+            "$ref": "edl.schema.json#/$defs/templateRef"
+          },
+          "continuity_notes": {
+            "type": "string"
+          },
+          "last_frame": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "stitch": {
+            "type": "array",
+            "minItems": 2,
+            "description": "Timeline-ordered sub-ranges of multiple takes that together cover the scene",
+            "items": {
+              "type": "object",
+              "required": [
+                "take",
+                "in_s",
+                "out_s"
+              ],
+              "properties": {
+                "take": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "in_s": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "out_s": {
+                  "type": "number"
+                },
+                "join_on": {
+                  "type": "string",
+                  "description": "The action/SFX/insert that hides the join into this segment"
+                }
+              }
+            }
+          },
+          "chain_frame": {
+            "type": "string",
+            "description": "Momentum frame saved for the next scene's keyframe — never the settled last frame"
+          },
+          "chain_frame_s": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "decision": {
+                  "enum": [
+                    "accept",
+                    "accept_trim"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "in_s",
+                "out_s",
+                "continuity_notes"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "decision": {
+                  "const": "regenerate"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "prompt_delta"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "decision": {
+                  "const": "fallback"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "fallback"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "decision": {
+                  "const": "stitch"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "stitch",
+                "continuity_notes"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

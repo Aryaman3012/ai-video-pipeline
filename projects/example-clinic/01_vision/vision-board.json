@@ -1,0 +1,92 @@
+{
+  "title": "AI front desk for clinics — 30 s explainer",
+  "assumptions": [
+    "Example project: figures and brand are placeholders"
+  ],
+  "audience": "Clinic owners and practice managers in India",
+  "purpose": "sell",
+  "takeaway": "An AI receptionist answers every call so staff can focus on patients in the room.",
+  "emotional_arc": [
+    "frustration",
+    "recognition",
+    "relief",
+    "confidence"
+  ],
+  "runtime_target_s": 33,
+  "format": {
+    "aspect_ratio": "16:9",
+    "fps": 24,
+    "width": 1920,
+    "height": 1080,
+    "platform": "YouTube / LinkedIn"
+  },
+  "look": {
+    "visual_style": "cinematic live-action, naturalistic, shallow depth of field",
+    "lighting": "soft daylight from large windows on the left; cooler and harsher in the 'problem' half, warmer in the 'solution' half",
+    "camera_language": "locked-off close-ups for tension, slow dolly-ins for the turn, eye-level medium shots",
+    "texture": "clean with subtle film grain",
+    "reference_frames": [
+      "Close-up of a ringing desk phone, blinking red line light, empty chair out of focus",
+      "Medium shot of a receptionist between a patient and a ringing phone, papers in hand",
+      "Warm slow push-in on the same receptionist smiling at a patient at the counter"
+    ]
+  },
+  "theme": {
+    "colors": {
+      "background": "#0F1B2D",
+      "primary": "#2EC4B6",
+      "accent": "#FFB547",
+      "text": "#F5F7FA",
+      "muted": "#A9B4C2"
+    },
+    "fonts": {
+      "heading": "Inter, Helvetica, Arial, sans-serif",
+      "body": "Inter, Helvetica, Arial, sans-serif"
+    },
+    "motion": {
+      "damping": 18,
+      "stiffness": 120,
+      "entrance_frames": 12
+    }
+  },
+  "cast": {
+    "CHAR_RECEPTIONIST": {
+      "descriptor": "a woman in her late 20s with a low bun, a teal clinic polo shirt and a lanyard ID badge",
+      "reference_image": "01_vision/refs/char_receptionist.png"
+    },
+    "LOC_RECEPTION": {
+      "descriptor": "a bright, modern Indian clinic reception with a white counter, a desk phone, potted plants and a small waiting area behind",
+      "reference_image": "01_vision/refs/loc_reception.png"
+    }
+  },
+  "strategy": {
+    "a_roll_ratio": 0.6,
+    "a_roll_purpose": "Show the human moment at the front desk — before and after",
+    "broll_templates": [
+      "KineticText",
+      "BulletList",
+      "TitleCard",
+      "CTA",
+      "LowerThird"
+    ]
+  },
+  "audio": {
+    "vo_tone": "warm, confident, conversational",
+    "music": "minimal piano turning into light upbeat pulse at the turn, ~100 BPM",
+    "sfx": "phone ring in scene 1–2"
+  },
+  "do": [
+    "Keep screens out of focus",
+    "Keep one clear subject per shot",
+    "Use teal and amber accents",
+    "Let the turn (scene 4) breathe",
+    "Keep lighting direction from the left"
+  ],
+  "dont": [
+    "Legible text inside generated footage",
+    "Close-up dialogue or lip-sync",
+    "Real brand logos in generated footage",
+    "Crowded waiting rooms",
+    "Fast whip pans"
+  ]
+}

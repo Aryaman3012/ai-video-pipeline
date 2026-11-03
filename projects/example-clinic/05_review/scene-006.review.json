@@ -1,0 +1,30 @@
+{
+  "scene_id": "scene-006",
+  "reviews": [
+    {
+      "take": 1,
+      "clip": "04_clips/scene-006_take-01.mp4",
+      "probe": {
+        "duration_s": 6.0,
+        "fps": 24,
+        "width": 1280,
+        "height": 720
+      },
+      "frames_dir": "05_review/frames/scene-006_take-01",
+      "decision": "accept",
+      "scores": {
+        "adherence": 5,
+        "continuity": 4,
+        "artifacts": 4,
+        "motion": 4,
+        "composition": 5,
+        "vision_fit": 4
+      },
+      "in_s": 0.0,
+      "out_s": 5.5,
+      "continuity_notes": "Elderly patient in a beige kurta stands camera-right; warm light; ends on shared laugh.",
+      "last_frame": "03_prompts/keyframes/scene-006_last.png",
+      "notes": "Accepted on first take."
+    }
+  ]
+}

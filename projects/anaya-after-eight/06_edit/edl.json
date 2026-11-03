@@ -1,0 +1,538 @@
+{
+  "slug": "anaya-after-eight",
+  "version": 13,
+  "fps": 24,
+  "width": 720,
+  "height": 1280,
+  "theme": {
+    "colors": {
+      "background": "#0B1622",
+      "primary": "#14A0A8",
+      "accent": "#F5A524",
+      "text": "#F2F6F8",
+      "muted": "#7C8B99"
+    },
+    "fonts": {
+      "heading": "IBM Plex Sans Arabic",
+      "body": "IBM Plex Sans Arabic"
+    },
+    "motion": {
+      "damping": 24,
+      "stiffness": 210,
+      "entrance_frames": 8
+    }
+  },
+  "segments": [
+    {
+      "scene_id": "a1-hook",
+      "kind": "clip",
+      "duration_s": 0.9,
+      "src": "projects/anaya-after-eight/clips/scene-001_take-01.mp4",
+      "in_s": 0.58,
+      "transition_in": "cut"
+    },
+    {
+      "scene_id": "b1-inbox",
+      "kind": "broll",
+      "duration_s": 1.535,
+      "transition_in": "cut",
+      "broll": {
+        "template": "WAInbox",
+        "props": {
+          "account": "Al Noor Dental",
+          "clock": "11:52",
+          "scroll": [
+            0,
+            -70
+          ],
+          "scrollFrames": 50,
+          "rows": [
+            {
+              "name": "Fatima A.",
+              "preview": "Hi, do you have anything this week?",
+              "time": "8:12 PM",
+              "unread": 1
+            },
+            {
+              "name": "Noor K.",
+              "preview": "How much is whitening?",
+              "time": "8:47 PM",
+              "unread": 2
+            },
+            {
+              "name": "Sara M.",
+              "preview": "Hi, do you have anything this week?",
+              "time": "9:04 PM",
+              "unread": 1
+            },
+            {
+              "name": "Huda R.",
+              "preview": "Are you open on Friday?",
+              "time": "9:41 PM",
+              "unread": 1
+            },
+            {
+              "name": "Layla B.",
+              "preview": "Can I book for my son?",
+              "time": "10:37 PM",
+              "unread": 3
+            },
+            {
+              "name": "Mariam T.",
+              "preview": "Do you take insurance?",
+              "time": "11:02 PM",
+              "unread": 1
+            },
+            {
+              "name": "Aisha D.",
+              "preview": "Hello?",
+              "time": "11:48 PM",
+              "unread": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "b2-scroll",
+      "kind": "broll",
+      "duration_s": 2.71,
+      "transition_in": "cut",
+      "broll": {
+        "template": "WAInbox",
+        "props": {
+          "account": "Al Noor Dental",
+          "clock": "11:52",
+          "scroll": [
+            -70,
+            -150
+          ],
+          "scrollFrames": 66,
+          "rows": [
+            {
+              "name": "Fatima A.",
+              "preview": "Hi, do you have anything this week?",
+              "time": "8:12 PM",
+              "unread": 1
+            },
+            {
+              "name": "Noor K.",
+              "preview": "How much is whitening?",
+              "time": "8:47 PM",
+              "unread": 2
+            },
+            {
+              "name": "Sara M.",
+              "preview": "Hi, do you have anything this week?",
+              "time": "9:04 PM",
+              "unread": 1
+            },
+            {
+              "name": "Huda R.",
+              "preview": "Are you open on Friday?",
+              "time": "9:41 PM",
+              "unread": 1
+            },
+            {
+              "name": "Layla B.",
+              "preview": "Can I book for my son?",
+              "time": "10:37 PM",
+              "unread": 3
+            },
+            {
+              "name": "Mariam T.",
+              "preview": "Do you take insurance?",
+              "time": "11:02 PM",
+              "unread": 1
+            },
+            {
+              "name": "Aisha D.",
+              "preview": "Hello?",
+              "time": "11:48 PM",
+              "unread": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "a2-problem",
+      "kind": "clip",
+      "duration_s": 3,
+      "src": "projects/anaya-after-eight/clips/scene-004_take-01.mp4",
+      "in_s": 0.19,
+      "playback_rate": 0.901,
+      "transition_in": "cut"
+    },
+    {
+      "scene_id": "b3-sara",
+      "kind": "broll",
+      "duration_s": 3.4,
+      "transition_in": "cut",
+      "broll": {
+        "template": "WAInbox",
+        "props": {
+          "account": "Al Noor Dental",
+          "clock": "11:52",
+          "scroll": [
+            -150,
+            -158
+          ],
+          "scrollFrames": 24,
+          "focus": 2,
+          "focusFrom": 4,
+          "rows": [
+            {
+              "name": "Fatima A.",
+              "preview": "Hi, do you have anything this week?",
+              "time": "8:12 PM",
+              "unread": 1
+            },
+            {
+              "name": "Noor K.",
+              "preview": "How much is whitening?",
+              "time": "8:47 PM",
+              "unread": 2
+            },
+            {
+              "name": "Sara M.",
+              "preview": "Hi, do you have anything this week?",
+              "time": "9:04 PM",
+              "unread": 1
+            },
+            {
+              "name": "Huda R.",
+              "preview": "Are you open on Friday?",
+              "time": "9:41 PM",
+              "unread": 1
+            },
+            {
+              "name": "Layla B.",
+              "preview": "Can I book for my son?",
+              "time": "10:37 PM",
+              "unread": 3
+            },
+            {
+              "name": "Mariam T.",
+              "preview": "Do you take insurance?",
+              "time": "11:02 PM",
+              "unread": 1
+            },
+            {
+              "name": "Aisha D.",
+              "preview": "Hello?",
+              "time": "11:48 PM",
+              "unread": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "b4-gone",
+      "kind": "broll",
+      "duration_s": 3.76,
+      "transition_in": "cut",
+      "broll": {
+        "template": "WAThread",
+        "props": {
+          "contact": "Sara M.",
+          "presence": "last seen 7:41 AM",
+          "clock": "7:42",
+          "dateChip": "YESTERDAY",
+          "messages": [
+            {
+              "side": "in",
+              "text": "Hi, do you have anything this week?",
+              "time": "9:04 PM",
+              "delay": 0
+            },
+            {
+              "side": "in",
+              "text": "Never mind — I've booked somewhere else.",
+              "time": "7:41 AM",
+              "delay": 22
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "b5-ads",
+      "kind": "broll",
+      "duration_s": 2.16,
+      "transition_in": "cut",
+      "broll": {
+        "template": "MetaAds",
+        "props": {
+          "clock": "7:45",
+          "account": "Al Noor Dental",
+          "columns": [
+            "Campaign",
+            "Spend",
+            "Leads"
+          ],
+          "footnote": "Sara M. was counted as a lead at 9:04 PM.",
+          "rows": [
+            {
+              "cells": [
+                "Whitening · Feed",
+                "••••",
+                "41"
+              ]
+            },
+            {
+              "cells": [
+                "Implants · Reels",
+                "••••",
+                "23"
+              ]
+            },
+            {
+              "cells": [
+                "Whitening · Reels",
+                "••••",
+                "64"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "Retargeting",
+                "••••",
+                "12"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "b6-unseen",
+      "kind": "broll",
+      "duration_s": 1.96,
+      "transition_in": "cut",
+      "broll": {
+        "template": "WAInbox",
+        "props": {
+          "account": "Al Noor Dental",
+          "clock": "7:46",
+          "scroll": [
+            -158,
+            -158
+          ],
+          "focus": 2,
+          "focusFrom": 0,
+          "rows": [
+            {
+              "name": "Fatima A.",
+              "preview": "Hi, do you have anything this week?",
+              "time": "8:12 PM",
+              "unread": 1
+            },
+            {
+              "name": "Noor K.",
+              "preview": "How much is whitening?",
+              "time": "8:47 PM",
+              "unread": 2
+            },
+            {
+              "name": "Sara M.",
+              "preview": "Never mind — I've booked somewhere else.",
+              "time": "9:04 PM",
+              "unread": 2
+            },
+            {
+              "name": "Huda R.",
+              "preview": "Are you open on Friday?",
+              "time": "9:41 PM",
+              "unread": 1
+            },
+            {
+              "name": "Layla B.",
+              "preview": "Can I book for my son?",
+              "time": "10:37 PM",
+              "unread": 3
+            },
+            {
+              "name": "Mariam T.",
+              "preview": "Do you take insurance?",
+              "time": "11:02 PM",
+              "unread": 1
+            },
+            {
+              "name": "Aisha D.",
+              "preview": "Hello?",
+              "time": "11:48 PM",
+              "unread": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "a3-reframe",
+      "kind": "clip",
+      "duration_s": 4.4,
+      "src": "projects/anaya-after-eight/clips/scene-008_take-01.mp4",
+      "in_s": 0.16,
+      "playback_rate": 1.128,
+      "transition_in": "cut"
+    },
+    {
+      "scene_id": "b7-anaya",
+      "kind": "broll",
+      "duration_s": 3.88,
+      "transition_in": "cut",
+      "broll": {
+        "template": "WAThread",
+        "props": {
+          "contact": "Sara M.",
+          "presence": "online",
+          "clock": "21:04",
+          "typingAt": 8,
+          "messages": [
+            {
+              "side": "in",
+              "text": "Hi, do you have anything this week?",
+              "time": "9:04 PM",
+              "delay": 0
+            },
+            {
+              "side": "out",
+              "text": "نعم، لدينا مواعيد هذا الأسبوع. أي يوم يناسبك؟",
+              "time": "9:04 PM",
+              "ticks": "read",
+              "rtl": true,
+              "delay": 30
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "b8-qualify",
+      "kind": "broll",
+      "duration_s": 2.22,
+      "transition_in": "cut",
+      "broll": {
+        "template": "WAThread",
+        "props": {
+          "contact": "Sara M.",
+          "presence": "online",
+          "clock": "21:05",
+          "messages": [
+            {
+              "side": "out",
+              "text": "Which treatment were you looking at?",
+              "time": "9:04 PM",
+              "ticks": "read",
+              "delay": 0
+            },
+            {
+              "side": "in",
+              "text": "Teeth whitening",
+              "time": "9:05 PM",
+              "delay": 10
+            },
+            {
+              "side": "out",
+              "text": "Thursday 6:30pm is free — shall I hold it?",
+              "time": "9:05 PM",
+              "ticks": "read",
+              "delay": 20
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "b9-calendar",
+      "kind": "broll",
+      "duration_s": 2.66,
+      "transition_in": "cut",
+      "broll": {
+        "template": "WACalendar",
+        "props": {
+          "day": "Thursday",
+          "date": "12 February",
+          "clock": "21:06",
+          "bookIndex": 3,
+          "bookedLabel": "Sara M. — whitening",
+          "slots": [
+            {
+              "time": "4:30 pm",
+              "taken": "Ahmed K."
+            },
+            {
+              "time": "5:15 pm",
+              "taken": "Reem S."
+            },
+            {
+              "time": "5:45 pm"
+            },
+            {
+              "time": "6:30 pm"
+            },
+            {
+              "time": "7:15 pm"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "b10-followup",
+      "kind": "broll",
+      "duration_s": 2.63,
+      "transition_in": "cut",
+      "broll": {
+        "template": "WAThread",
+        "props": {
+          "contact": "Sara M.",
+          "presence": "last seen today",
+          "clock": "09:12",
+          "dateChip": "TODAY",
+          "messages": [
+            {
+              "side": "in",
+              "text": "Yes please",
+              "time": "9:06 PM",
+              "delay": 0
+            },
+            {
+              "side": "out",
+              "text": "Booked. See you Thursday at 6:30 — reply here if anything changes.",
+              "time": "9:12 AM",
+              "ticks": "read",
+              "delay": 12
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "b11-end",
+      "kind": "broll",
+      "duration_s": 5.803,
+      "transition_in": "fade",
+      "transition_frames": 10,
+      "broll": {
+        "template": "EndCard",
+        "props": {
+          "wordmark": "anaya",
+          "line": "See it answer one of your leads.",
+          "action": "Tap for a demo"
+        }
+      }
+    }
+  ],
+  "audio": [
+    {
+      "role": "vo",
+      "src": "projects/anaya-after-eight/audio/flo-vo-cut.wav",
+      "start_s": 0,
+      "volume": 1
+    }
+  ]
+}

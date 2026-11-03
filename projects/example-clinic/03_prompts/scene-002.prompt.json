@@ -1,0 +1,46 @@
+{
+  "scene_id": "scene-002",
+  "intent": "Overloaded receptionist",
+  "continuity_inputs": [
+    "CHAR_RECEPTIONIST",
+    "LOC_RECEPTION"
+  ],
+  "acceptance_criteria": [
+    "Receptionist matches CHAR_RECEPTIONIST",
+    "File changes hands cleanly",
+    "She looks toward the phone",
+    "Lighting comes from the left"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "model": "gen4.5",
+      "mode": "image_to_video",
+      "prompt": "Gentle handheld camera at eye level. The woman hands a paper file across the counter to a patient, then turns her head toward the ringing phone on her left. Background patients shift in their seats, softly out of focus. Busy, slightly hurried pacing.",
+      "keyframe": "03_prompts/keyframes/char_receptionist_counter.png",
+      "duration_s": 6,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "credits_estimate": 72,
+      "output_path": "04_clips/scene-002_take-01.mp4",
+      "generated_at": "2026-09-16T10:00:00+05:30"
+    },
+    {
+      "take": 2,
+      "model": "gen4.5",
+      "mode": "image_to_video",
+      "prompt": "Gentle handheld camera at eye level. The woman passes a large blue paper folder flat across the counter to a patient, then turns her head toward the ringing phone on her left. Background patients shift in their seats, softly out of focus. Busy, slightly hurried pacing.",
+      "keyframe": "03_prompts/keyframes/char_receptionist_counter.png",
+      "duration_s": 6,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": "Hands merged with the file in take 1: frame the handover at chest height and keep the file large and flat — 'she passes a large blue paper folder flat across the counter'.",
+      "credits_estimate": 72,
+      "output_path": "04_clips/scene-002_take-02.mp4",
+      "generated_at": "2026-09-16T10:20:00+05:30"
+    }
+  ]
+}

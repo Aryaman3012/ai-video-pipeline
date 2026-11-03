@@ -1,0 +1,62 @@
+{
+  "scene_id": "scene-002",
+  "intent": "Owner reacts: surprise, then the real question",
+  "view": "podcast-guest",
+  "continuity_inputs": [
+    "CHAR_OWNER.reference_image"
+  ],
+  "acceptance_criteria": [
+    "Same person, wardrobe and set as the first frame",
+    "Every word is spoken, in order, lip-synced",
+    "Mouth closed and listening through the [PAUSE] tail",
+    "Locked-off medium shot, full frame, nothing new in shot"
+  ],
+  "takes": [
+    {
+      "take": 1,
+      "slots": {
+        "line": [
+          {
+            "from": 0,
+            "to": 2.5,
+            "say": "Twenty percent? Without increasing our marketing budget?"
+          },
+          {
+            "from": 2.5,
+            "to": 3.5,
+            "say": "How?"
+          },
+          {
+            "from": 3.5,
+            "to": 4.5,
+            "pause": true,
+            "note": "slight pause, a brief thoughtful beat"
+          },
+          {
+            "from": 4.5,
+            "to": 7.8,
+            "say": "But how do I actually see that across all my clinics?"
+          },
+          {
+            "from": 7.8,
+            "to": 8,
+            "pause": true
+          }
+        ],
+        "delivery": "Surprised and intrigued, a little skeptical on \"How?\", then a brief thoughtful beat, then curious and practical, genuinely asking."
+      },
+      "duration_s": 8,
+      "aspect_ratio": "16:9",
+      "fps": 24,
+      "seed": null,
+      "prompt_delta_applied": null,
+      "generated_at": null,
+      "model": "gen4.5",
+      "mode": "image_to_video",
+      "prompt": "Locked-off static camera, medium shot, shallow depth of field, cinematic podcast look. She sits centred in the frame. The woman at the mic talks to an unseen host slightly off-camera to her right.\n[0.0–3.5s] She talks to the host with natural hand gestures, lips moving in conversation.\n[3.5–4.5s] She stops talking, mouth closed, and listens to the host with a slight nod and steady eye contact.\n[4.5–7.8s] She talks to the host with natural hand gestures, lips moving in conversation.\n[7.8–8.0s] She stops talking, mouth closed, and listens to the host with a slight nod and steady eye contact.\nBlank, unlettered surfaces, a clean picture free of captions, the picture fills the full frame edge to edge, a single person in frame, natural, well-formed hands.",
+      "keyframe": "01_vision/refs/owner_podcast.png",
+      "output_path": "04_clips/scene-002_take-01.mp4"
+    }
+  ],
+  "generator": "runway"
+}

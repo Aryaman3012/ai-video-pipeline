@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "broll-design.schema.json",
+  "title": "B-roll Design",
+  "type": "object",
+  "required": [
+    "slug",
+    "cards"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "scene_id",
+          "template",
+          "props",
+          "beats"
+        ],
+        "properties": {
+          "scene_id": {
+            "type": "string",
+            "pattern": "^scene-\\d{3}[a-z]?$"
+          },
+          "template": {
+            "type": "string"
+          },
+          "props": {
+            "type": "object"
+          },
+          "beats": {
+            "type": "array",
+            "minItems": 1,
+            "description": "Word-timed choreography: when each element of the card moves",
+            "items": {
+              "type": "object",
+              "required": [
+                "at_s",
+                "element"
+              ],
+              "properties": {
+                "at_s": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Absolute film time; emphasis leads its word by 1-2 frames, reveals lag 200-500 ms"
+                },
+                "element": {
+                  "type": "string"
+                },
+                "word": {
+                  "type": "string",
+                  "description": "The VO word this beat lands on"
+                },
+                "action": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "reading_hold_s": {
+            "type": "number",
+            "description": "(characters / 12) + 0.5 for the card's longest text"
+          },
+          "seam_cover": {
+            "type": "boolean",
+            "description": "true = this card hides an A-roll seam; assembly must not move it"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "overlay_timing": {
+      "type": "array",
+      "description": "Measured from_s/to_s corrections for A-roll overlays",
+      "items": {
+        "type": "object",
+        "required": [
+          "scene_id",
+          "template",
+          "from_s",
+          "to_s"
+        ],
+        "properties": {
+          "scene_id": {
+            "type": "string"
+          },
+          "template": {
+            "type": "string"
+          },
+          "from_s": {
+            "type": "number"
+          },
+          "to_s": {
+            "type": "number"
+          },
+          "word": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

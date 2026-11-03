@@ -1,0 +1,58 @@
+{
+  "scene_id": "scene-002",
+  "reviews": [
+    {
+      "take": 1,
+      "clip": "04_clips/scene-002_take-01.mp4",
+      "probe": {
+        "duration_s": 6.0,
+        "fps": 24,
+        "width": 1280,
+        "height": 720
+      },
+      "frames_dir": "05_review/frames/scene-002_take-01",
+      "decision": "regenerate",
+      "scores": {
+        "adherence": 5,
+        "continuity": 4,
+        "artifacts": 2,
+        "motion": 4,
+        "composition": 5,
+        "vision_fit": 4
+      },
+      "issues": [
+        {
+          "at_s": 2.0,
+          "description": "fingers merge into the file during the handover"
+        }
+      ],
+      "prompt_delta": "Make the handed object a large, flat blue folder held at chest height so hands stay clear.",
+      "notes": "Composition and continuity good; artifact at the key action."
+    },
+    {
+      "take": 2,
+      "clip": "04_clips/scene-002_take-02.mp4",
+      "probe": {
+        "duration_s": 6.0,
+        "fps": 24,
+        "width": 1280,
+        "height": 720
+      },
+      "frames_dir": "05_review/frames/scene-002_take-02",
+      "decision": "accept",
+      "scores": {
+        "adherence": 5,
+        "continuity": 4,
+        "artifacts": 4,
+        "motion": 4,
+        "composition": 5,
+        "vision_fit": 4
+      },
+      "in_s": 0.0,
+      "out_s": 5.5,
+      "continuity_notes": "Teal polo, low bun, badge on left side; she ends looking screen-left at the phone; blue folder now with the patient.",
+      "last_frame": "03_prompts/keyframes/scene-002_last.png",
+      "notes": "Clean handover. Extra 0.5 s kept as handle."
+    }
+  ]
+}

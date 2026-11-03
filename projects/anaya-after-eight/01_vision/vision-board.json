@@ -1,0 +1,126 @@
+{
+  "title": "Anaya — After Eight",
+  "assumptions": [
+    "Written unattended: the user approves this board, the agent does not. state.json stays at stage 'vision' with approved.vision false.",
+    "VO pace is ~165 wpm (116 words in 42 s), faster than the 150 wpm house default; the 21-32 s SOLUTION block absorbs any overrun, the hook and CTA keep their written lengths.",
+    "Presenter is a male doctor in his late 30s, Middle Eastern, in an open white clinician's coat over a light-blue collared shirt. Decided by the user, replacing the earlier assumed female presenter in a blazer. A clinician addressing clinic owners reads as a peer rather than a spokesperson, which suits a script whose turn is 'it's not your team'.",
+    "Ad runs in English with one Arabic proof moment inside the phone mockup at 21-32 s; a fully Arabic-first cut is a separate pass, not a crop of this one.",
+    "Every screen in the film is a phone screen, including Meta Ads Manager shown in its mobile app form.",
+    "All logos, app UI and on-screen lettering are composited in Remotion; Runway is never asked to render a readable screen or word.",
+    "The invented A-roll insert was cut. An earlier draft added a 3 s shot of the empty front desk on the line 'Your front desk never saw her.' purely to lift the A-roll share to 0.48. It illustrated the VO rather than advancing it and cost a second keyframe for the least informative shot in the film. AGITATE's pacing is carried by motion inside the Remotion card instead."
+  ],
+  "audience": "Owners and managers of private clinics (dental, derm, aesthetics, IVF) in a Gulf market, running Meta lead ads and personally answerable for cost-per-booking; bilingual Arabic and English.",
+  "purpose": "sell",
+  "takeaway": "You are already paying for the enquiries that arrive after 8 pm — Anaya answers them in under five minutes, in Arabic or English, so they book with you instead of the clinic that replied first.",
+  "emotional_arc": [
+    "unease — the hours of your funnel you have never actually looked at",
+    "recognition — it is not your team, the desk closes and the enquiries do not",
+    "relief — those hours are covered now",
+    "confidence — same number, same team, one clear next step"
+  ],
+  "runtime_target_s": 42,
+  "format": {
+    "aspect_ratio": "9:16",
+    "fps": 24,
+    "width": 1080,
+    "height": 1920,
+    "platform": "Meta (Instagram/Facebook Reels, Stories, Feed); 1:1 1080x1080 cutdown rendered from the same EDL. Non-16:9, so every A-roll take is image_to_video with a keyframe."
+  },
+  "look": {
+    "visual_style": "Contemporary clinical calm — a real modern private clinic after closing, shot the way a competent corporate film would shoot it. Matte white and pale grey surfaces, brushed steel, a glass partition, low greenery. One subject in frame, shallow depth of field, natural performance, everything in the room current and well kept.",
+    "lighting": "Night interior, high-key for a night scene. Soft even ambient slightly on the cool side, motivated by recessed ceiling lights dimmed to their night setting and corridor light through a glass partition. A soft broad key just left of camera at eye height keeps the face evenly readable at phone size. The background falls to soft desaturated slate, holding separation while staying open. One modern matte-black LED task lamp and a faint monitor glow sit in the background as the only warm and cool accents; skin stays neutral. The identical setup holds across all five A-roll shots so separate generations cut together.",
+    "camera_language": "Eye-level medium shots, 50 mm at f/2.8, locked-off or a slow 5-8 percent push-in, with one brief handheld micro-drift on the hook. One camera move and one action per take. Subject centred inside the 1:1 square safe area.",
+    "texture": "Clean digital capture, neutral white balance, minimal noise, crisp surfaces. The 720p A-roll against native 1080p graphics is reconciled in Remotion at stage 5 with a light uniform soften on the A-roll layer rather than baked into generation.",
+    "reference_frames": [
+      "Modern clinic reception at night, overhead lights dimmed. A man in an open white clinician's coat stands beside the counter holding a dark phone at waist height, his face evenly lit and clearly readable. A matte-black LED task lamp glows small in the background; a glass partition carries corridor light. Medium shot, 50 mm, fixed framing.",
+      "Low three-quarter insert of the same counter, unoccupied and immaculate: a closed laptop, a matte-black task lamp lit low, a chair turned away, the corridor beyond in soft slate. Clean surfaces, stillness, one thin highlight along the counter edge.",
+      "The presenter lowers the phone and looks straight to lens, chin level, one small nod. Steady, unhurried, composed. Medium close-up, eye level, face evenly lit.",
+      "Same man, same light, a small confident smile arriving; he holds the lens, settled and certain. Medium shot, locked-off.",
+      "B-roll ceiling: a 9:16 phone screen filling most of the frame, floating over the softly defocused clinic reception at night so the room is still readable behind and around it. Chat rows on #0B1622 chrome, contact names replaced by soft slate blur bars, timestamps 8:12 PM / 9:04 PM / 10:37 PM in amber, teal unread pips; the list scrolls up at reading pace and stops dead on 10:37 PM.",
+      "B-roll ceiling: a teal card reading 'Overnight - 22 enquiries handled - 6 booked' sitting over the same softly defocused clinic plate, the two numbers counting up and landing, a thin teal bar filling underneath."
+    ],
+    "theme_name": "clean night",
+    "ground": "ONE GROUND. Every frame in the film, A-roll and B-roll alike, sits in the same room. The B-roll cards render over PLATE_CLINIC_DEFOCUSED — a still of the clinic reception pulled from the presenter master and blurred — rather than over flat #0B1622. The phone UI, the counters and the kinetic type float in the clinic at night, so a cut from the presenter to a screen stays in one continuous space instead of dropping into a graphic void. #0B1622 stops being a full-frame fill and becomes what it should have been all along: the deepest value in that plate, and the chrome colour inside the phone UI itself.",
+    "cut_grammar": "REASSURE (32-36s) cuts straight into CTA (36-42s) with no B-roll between them — the only A-roll-to-A-roll cut in the film. Identical framing on both sides would read as a jump cut, so the two shots differ by shot size and movement: REASSURE is a locked-off medium, CTA opens out to a medium-wide with a slow push-in. Opening out on the final shot also makes room for the pointing gesture and the end card. Every other A-roll shot is separated by B-roll, so matching framing there is an asset rather than a risk."
+  },
+  "theme": {
+    "colors": {
+      "background": "#0B1622",
+      "primary": "#14A0A8",
+      "accent": "#F5A524",
+      "text": "#F2F6F8",
+      "muted": "#7C8B99"
+    },
+    "fonts": {
+      "heading": "IBM Plex Sans Arabic",
+      "body": "IBM Plex Sans Arabic"
+    },
+    "motion": {
+      "damping": 26,
+      "stiffness": 220,
+      "entrance_frames": 8
+    }
+  },
+  "cast": {
+    "CHAR_PRESENTER": {
+      "descriptor": "Medium shot, waist up, eye level, centred, 50 mm lens at f/2.8 with a softly defocused background: a man in his late 30s of Middle Eastern appearance with warm olive skin, short neatly cut dark hair, a closely trimmed dark beard, slim build, wearing a crisp open white clinician's coat over a plain light-blue collared shirt, standing beside a clean modern clinic reception counter at night, holding a dark slim smartphone in his right hand at waist height, looking straight into the lens with a calm level expression. Soft even lighting slightly on the cool side with a broad key just left of camera at eye height, his face evenly lit and clearly readable, the background falling to soft desaturated slate.",
+      "reference_image": null
+    },
+    "LOC_CLINIC_RECEPTION_NIGHT": {
+      "descriptor": "a small contemporary private-clinic reception at night, matte white counter with a closed laptop and a slim matte-black LED task lamp lit low, brushed steel details, a glass partition to a lit corridor behind, a low shelf of green plants, ceiling lights dimmed to a soft even night level, surfaces clean and current",
+      "reference_image": null
+    },
+    "PROP_PHONE": {
+      "descriptor": "a dark slim smartphone with a plain black bezel and a smooth blank screen, held upright in one hand",
+      "reference_image": null
+    },
+    "UI_PHONE_SCREEN": {
+      "descriptor": "a 9:16 phone screen built in Remotion: #0B1622 chrome, 8 px corner radius, rows divided by 1 px #7C8B99 lines at 20 percent opacity, unread pips in #14A0A8, timestamps in #F5A524, contact names replaced by soft blurred slate bars, IBM Plex Sans Arabic throughout, one Arabic message bubble in the 21-32 s block. Rendered in Remotion, always.",
+      "reference_image": null
+    },
+    "BRAND_LOGO": {
+      "descriptor": "the Anaya wordmark, composited in Remotion only, appearing once on the 40-42 s end card",
+      "reference_image": null
+    },
+    "PLATE_CLINIC_DEFOCUSED": {
+      "descriptor": "a still frame of the clean modern clinic reception at night, pulled from the approved presenter master with the presenter absent or cropped out, blurred to a soft defocus: matte white counter, brushed steel, a glass partition carrying corridor light, a slim matte-black LED task lamp lit low, the space settling to soft desaturated slate with #0B1622 as its deepest value. This is the background layer under every B-roll card in the film.",
+      "reference_image": null
+    }
+  },
+  "strategy": {
+    "a_roll_ratio": 0.4,
+    "a_roll_purpose": "A-roll carries the one thing a graphic cannot: a human being who takes responsibility for the accusation. 'It's not your team' only lands coming from a face, so the presenter holds the hook, the reframe, the reassurance and the CTA — 17 s of 42, which is a ratio of 0.40. That number now describes the edit rather than driving it: an earlier draft invented a 3 s empty-desk insert purely to reach 0.48, but it illustrated the VO line instead of advancing it, interrupted the proof-of-spend argument mid-block, and cost a second keyframe for the least informative shot in the film. It was cut. Everything else is proof the viewer can check against their own phone, which is B-roll by necessity: three of the seven blocks (PROBLEM, AGITATE, SOLUTION — 25 of 42 s) are app screens, and readable UI is Runway's single worst weak spot. Pacing inside those blocks is carried by motion within the Remotion cards — Ads Manager columns populating, the lead count climbing while the reply count holds at zero — rather than by cutaways.",
+    "broll_templates": [
+      "PhoneUI (NEW — must be built and registered in stage ⑤; one template, variant prop: inbox | thread | ads | dashboard)",
+      "KineticText",
+      "StatCounter",
+      "BulletList",
+      "CTA",
+      "Caption (overlay, burned-in subtitle on every VO line, all 42 s)",
+      "CalloutTag (overlay, timestamps and stabs pinned over A-roll)"
+    ]
+  },
+  "audio": {
+    "vo_tone": "Calm, level, adult, mid-chest. A peer speaking to a peer at the end of a long day. Statements land flat and stop; the accusation works because it is delivered without heat. Warmth arrives at 'It's not your team.' and stays through the CTA. English with a light regional accent.",
+    "music": "Sparse minor-key electronic at 90 BPM. A single low sustained synth and a soft ticking pulse under 0-17 s; the pulse drops out at 17 s for the reframe; a warm pad enters at 21 s and opens through the CTA, holding under the last line rather than swelling over it.",
+    "sfx": "One soft phone-notification buzz at about 3 s, quiet night room tone throughout, a single soft chime as the dashboard counter lands at about 24 s. Cuts are carried by the music pulse, so hard cuts read as intentional."
+  },
+  "do": [
+    "Reuse the single approved char-presenter-master.png as the input keyframe for all four on-camera takes, and describe motion only in those prompts.",
+    "Keep every word of on-screen text, the presenter's face and the CTA pointing gesture inside x 54-1026, y 470-1450 so the 1:1 cutdown renders from the same EDL.",
+    "Keep all screens blank in Runway prompts and add every readable pixel in Remotion.",
+    "Hold the identical lighting words — soft even lighting slightly on the cool side, a broad key just left of camera at eye height, the background falling to soft desaturated slate — across all five A-roll prompts so the shots cut together.",
+    "Blur every patient name, phone number, treatment name and spend figure in the phone mockups, and keep the claims operational: under five minutes, Arabic or English, three weeks of follow-up.",
+    "Keep the brand amber and teal in the graphics and in small background practicals only, leaving skin and surfaces neutral so the overlays keep their contrast.",
+    "Render every B-roll card over the defocused clinic plate so each cut stays in one continuous space, keeping #0B1622 as the deepest tone in that plate and as the phone-UI chrome rather than as a full-frame background."
+  ],
+  "dont": [
+    "Avoid close-ups of the presenter's mouth — instead frame at medium or medium-close and let the burned-in caption carry the words, since lip-sync is Runway's known weak spot.",
+    "Avoid red, alarm SFX and rising VO inflection — instead use amber, a ticking pulse and a level read, so the film stays accusatory without becoming scolding.",
+    "Avoid reproducing WhatsApp's and Meta's actual product UI pixel-for-pixel — instead build a recognisable generic chat and ads UI in the film's own palette.",
+    "Avoid long or compound camera paths and multi-action prompts — instead give each take one camera move, one action and 3-6 seconds.",
+    "Avoid prompting Runway for the Anaya wordmark or any lettering — instead composite the logo once, on the end card, in Remotion.",
+    "Avoid brass fittings, visible dust in the air, heavy film grain and deep shadow — instead keep the clinic current, clean and evenly lit, since period and noir cues read as neglect in a healthcare setting.",
+    "Avoid cutting between two A-roll shots at the same size and angle. Instead change shot size by a clear step — the one place this happens is REASSURE into CTA, where the frame opens from medium to medium-wide."
+  ]
+}

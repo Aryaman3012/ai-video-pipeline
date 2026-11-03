@@ -1,0 +1,105 @@
+{
+  "title": "HeyAnaya Script 1 — podcast (veo test)",
+  "assumptions": [
+    "Test fixture: Script 1 clips 1–3 and owner clips P1-1, P1-2, re-rendered from templates/prompts/"
+  ],
+  "audience": "Owners of multi-location clinic chains in the UAE",
+  "purpose": "sell",
+  "takeaway": "Growth is in converting the leads you already pay for.",
+  "emotional_arc": [
+    "curiosity",
+    "recognition",
+    "conviction"
+  ],
+  "runtime_target_s": 60,
+  "format": {
+    "aspect_ratio": "16:9",
+    "fps": 24,
+    "width": 1920,
+    "height": 1080,
+    "platform": "Meta feed / LinkedIn",
+    "generator": {
+      "name": "veo",
+      "model": "Veo 3.1 Fast"
+    }
+  },
+  "look": {
+    "visual_style": "cinematic podcast, warm dark studio",
+    "lighting": "warm practicals, soft key",
+    "camera_language": "locked-off medium shots, shot / reverse shot",
+    "texture": "clean; unify pass adds grain"
+  },
+  "theme": {
+    "colors": {
+      "background": "#0E1B24",
+      "primary": "#14B8A6",
+      "accent": "#1FA855",
+      "text": "#F7F8F6",
+      "muted": "#9AA4AB"
+    },
+    "fonts": {
+      "heading": "Inter",
+      "body": "Inter"
+    },
+    "motion": {
+      "damping": 200,
+      "stiffness": 120,
+      "entrance_frames": 12
+    }
+  },
+  "cast": {
+    "CHAR_HOST": {
+      "descriptor": "an Emirati man in a white kandura and ghutra with black agal",
+      "reference_image": "01_vision/refs/host_podcast.png",
+      "noun": "man",
+      "pronoun": "he",
+      "wardrobe": "white kandura and ghutra with black agal",
+      "speaker": "the Emirati man",
+      "role": "an Arabic-accented English speaker from the UAE",
+      "voice": "clear Emirati-accented English, soft Gulf Arabic intonation, lightly rolled r's, calm, deep, confident male voice.",
+      "voice_as": "delivery_prefix",
+      "avoid": [
+        "American or British accent"
+      ]
+    },
+    "CHAR_OWNER": {
+      "descriptor": "a woman with long dark hair in a black blazer over a white top and gold hoop earrings",
+      "reference_image": "01_vision/refs/owner_podcast.png",
+      "noun": "woman",
+      "pronoun": "she",
+      "wardrobe": "long dark hair, black blazer over a white top, gold hoop earrings",
+      "speaker": "the woman",
+      "role": "a clinic chain owner",
+      "voice": "natural human female voice, not synthetic or AI-sounding. English-speaking, with a clear Arabic (Gulf) accent: soft Arabic intonation, lightly rolled r's, slightly rounded vowels. Warm, mid-pitched, confident businesswoman tone. Natural breaths and small inflections, like a real person in conversation. Don't muffle the audio, it should be clear.",
+      "voice_as": "voice_line",
+      "avoid": [
+        "robotic or AI-sounding voice",
+        "American, British or Indian accent"
+      ]
+    },
+    "LOC_STUDIO_HOST": {
+      "descriptor": "a warm, dark podcast studio with a studio mic, a mug and a table",
+      "keep": "the mic, mug, table and warm dark studio",
+      "reference_image": null
+    },
+    "LOC_STUDIO_GUEST": {
+      "descriptor": "a warm, dark podcast studio with a studio mic, a black mug, a wooden table, a floor lamp and plants",
+      "keep": "the mic, black mug, wooden table, floor lamp, plants and warm dark studio",
+      "reference_image": null
+    }
+  },
+  "strategy": {
+    "a_roll_ratio": 1,
+    "a_roll_purpose": "The conversation carries the ad; graphics are overlays"
+  },
+  "audio": {
+    "vo_tone": "harvested from the generated clips",
+    "music": "none in the clips",
+    "sfx": "none"
+  },
+  "vo": {
+    "audio": "00_script/vo.wav",
+    "words": "00_script/vo.words.json",
+    "source": "harvested"
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+remotion/public/projects/*
+!remotion/public/projects/.gitkeep
+projects/*/04_clips/*.mp4
+projects/*/renders/
+projects/*/05_review/frames/
+out/
+projects/*/00_script/vo/
+projects/*/00_script/*.wav
+projects/*/00_script/*.mp3
+projects/*/01_vision/refs/*.png
+projects/*/01_vision/refs/*.jpg
+projects/*/03_prompts/keyframes/*.png
+projects/*/05_ingest/clips/
+.DS_Store

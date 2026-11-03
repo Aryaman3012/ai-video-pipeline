@@ -1,0 +1,298 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "vision-board.schema.json",
+  "title": "Vision Board",
+  "type": "object",
+  "required": [
+    "title",
+    "audience",
+    "purpose",
+    "takeaway",
+    "emotional_arc",
+    "runtime_target_s",
+    "format",
+    "look",
+    "theme",
+    "cast",
+    "strategy"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audience": {
+      "type": "string"
+    },
+    "purpose": {
+      "enum": [
+        "explain",
+        "persuade",
+        "entertain",
+        "sell",
+        "announce"
+      ]
+    },
+    "takeaway": {
+      "type": "string"
+    },
+    "emotional_arc": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2
+    },
+    "runtime_target_s": {
+      "type": "number",
+      "minimum": 5
+    },
+    "format": {
+      "type": "object",
+      "required": [
+        "aspect_ratio",
+        "fps",
+        "width",
+        "height"
+      ],
+      "properties": {
+        "aspect_ratio": {
+          "enum": [
+            "16:9",
+            "9:16",
+            "1:1",
+            "4:3",
+            "3:4",
+            "21:9"
+          ]
+        },
+        "fps": {
+          "enum": [
+            24,
+            25,
+            30
+          ]
+        },
+        "width": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "generator": {
+          "$ref": "#/$defs/generator"
+        }
+      }
+    },
+    "look": {
+      "type": "object",
+      "required": [
+        "visual_style",
+        "lighting",
+        "camera_language",
+        "texture"
+      ],
+      "properties": {
+        "visual_style": {
+          "type": "string"
+        },
+        "lighting": {
+          "type": "string"
+        },
+        "camera_language": {
+          "type": "string"
+        },
+        "texture": {
+          "type": "string"
+        },
+        "reference_frames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "theme": {
+      "$ref": "edl.schema.json#/$defs/theme"
+    },
+    "cast": {
+      "type": "object",
+      "description": "Fixed descriptor strings reused verbatim in prompts. Keys like CHAR_DOCTOR, LOC_CLINIC.",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "descriptor"
+        ],
+        "properties": {
+          "descriptor": {
+            "type": "string"
+          },
+          "reference_image": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "noun": {
+            "type": "string",
+            "description": "How prompts refer to them: man, woman"
+          },
+          "pronoun": {
+            "enum": [
+              "he",
+              "she",
+              "they"
+            ]
+          },
+          "wardrobe": {
+            "type": "string",
+            "description": "Exact wardrobe/hair, pasted into first-frame locks: 'white kandura and ghutra with black agal'"
+          },
+          "speaker": {
+            "type": "string",
+            "description": "Speaker-line name: 'the Emirati man'"
+          },
+          "role": {
+            "type": "string",
+            "description": "Speaker-line role: 'an Arabic-accented English speaker from the UAE'"
+          },
+          "voice": {
+            "type": "string",
+            "description": "Voice block, pasted verbatim into every speaking prompt"
+          },
+          "voice_as": {
+            "enum": [
+              "delivery_prefix",
+              "voice_line"
+            ],
+            "description": "Render the voice at the start of Delivery: (default) or as its own Voice: line"
+          },
+          "avoid": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Voice/identity avoid items for speaking views: 'American or British accent'"
+          },
+          "keep": {
+            "type": "string",
+            "description": "Locations: the set phrase appended to the first-frame lock: 'the mic, mug, table and warm dark studio'"
+          }
+        }
+      }
+    },
+    "strategy": {
+      "type": "object",
+      "required": [
+        "a_roll_ratio"
+      ],
+      "properties": {
+        "a_roll_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "a_roll_purpose": {
+          "type": "string"
+        },
+        "broll_templates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "properties": {
+        "vo_tone": {
+          "type": "string"
+        },
+        "music": {
+          "type": "string"
+        },
+        "sfx": {
+          "type": "string"
+        }
+      }
+    },
+    "do": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dont": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "vo": {
+      "type": "object",
+      "description": "The locked VO: final audio + word-level timestamps (stage 2)",
+      "required": [
+        "audio",
+        "words"
+      ],
+      "properties": {
+        "audio": {
+          "type": "string",
+          "description": "Path under 00_script/, e.g. 00_script/vo.wav"
+        },
+        "words": {
+          "type": "string",
+          "description": "Path to the word-timestamp file, e.g. 00_script/vo.words.json"
+        },
+        "source": {
+          "enum": [
+            "recorded",
+            "tts",
+            "harvested"
+          ]
+        },
+        "measured_duration_s": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "generator": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "description": "The video generator (stage ⓪ format lock). Extra keys override fields of its profile in templates/prompts/generators.json.",
+      "properties": {
+        "name": {
+          "enum": [
+            "runway",
+            "veo",
+            "other"
+          ]
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "gen4.5",
+            "Veo 3.1 Fast"
+          ]
+        }
+      }
+    }
+  }
+}
