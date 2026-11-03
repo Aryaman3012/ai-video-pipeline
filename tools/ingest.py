@@ -79,17 +79,25 @@ def envelope(wav_path, win=0.05):
 
 
 def speech_bounds(env, win, dur, words):
+    """Head: first loud window (room tone and breaths sit under peak-24 dB). Tail: Whisper's last
+    word end + 0.35 s, never past the last loud window + 0.3 s, never inside the word."""
     srt = sorted(env)
     floor = srt[int(len(srt) * 0.1)]
-    peak = srt[-1]
-    thr = max(floor + 12, peak - 32)
+    thr = max(floor + 12, srt[-1] - 24)
     on = [i for i, v in enumerate(env) if v > thr]
     if not on:
         return 0.0, dur
-    start = max(0.0, on[0] * win - 0.15)
+    start = max(0.0, on[0] * win - 0.12)
     end = min(dur, (on[-1] + 1) * win + 0.3)
-    if words:  # never cut inside a transcribed word
-        end = max(end, min(dur, words[-1]["end"] + 0.15))
+    if words:
+        last = words[-1]["end"]
+        end = min(end, last + 0.35)
+        end = max(end, min(dur, last + 0.1))
+        # a long quiet lead-in (breath, room tone) before the first word: start 0.25 s before it.
+        # Whisper smears the first word back to 0.00, so use its end - 0.3 s as the onset then.
+        w0 = words[0]
+        onset = w0["end"] - 0.3 if w0["start"] < 0.05 else w0["start"]
+        start = max(start, onset - 0.25)
     return round(start, 2), round(end, 2)
 
 
