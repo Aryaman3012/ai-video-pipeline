@@ -24,7 +24,7 @@ for a in 16x9 9x16; do
   # Bounded concurrency + a long frame timeout: OffthreadVideo frame fetches time out on a busy
   # machine with Remotion's default (half the cores). RENDER_CONCURRENCY overrides.
   if ! ( cd "$ROOT/remotion" && npx remotion render src/index.ts "Explainer$a" "$raw" --props="$TL" --codec=h264 --crf=16 \
-        --pixel-format=yuv420p --jpeg-quality=95 --concurrency="${RENDER_CONCURRENCY:-2}" --timeout=120000 $draft "${BROWSER_ARGS[@]}" ) >"$log" 2>&1 \
+        --pixel-format=yuv420p --jpeg-quality=95 --concurrency="${RENDER_CONCURRENCY:-2}" --timeout="${RENDER_TIMEOUT_MS:-120000}" --offthreadvideo-cache-size-in-bytes="${RENDER_VIDEO_CACHE:-536870912}" $draft "${BROWSER_ARGS[@]}" ) >"$log" 2>&1 \
      || [ ! -s "$raw" ]; then
     grep -E "Error|error" "$log" | head -5; echo "✗ $a render failed — full log: $log"; exit 1
   fi
