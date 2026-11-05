@@ -28,6 +28,19 @@ To change one for a single project, add the field next to `name`/`model` in
 `"duration_s": {"min": 4, "max": 8}`). To add a generator, add a profile there, a doc here,
 and a `render_as` (`veo` or `runway`) — or a new fence name in the templates.
 
+## Audio (asked for every new video)
+
+`format.audio` is a separate answer from the generator, because the same generator makes
+videos with and without a voice:
+
+| `format.audio` | Meaning | Rules the tools enforce |
+|---|---|---|
+| `dialogue` | The generated clips speak the lines, lip-synced; the clips are the VO (rule 12) | Error if the generator can't speak (Runway) |
+| `voiceover` | A separate VO track over the clips | Speaking views warn: the clip's sound is discarded and the mouth needs lip-sync to the VO |
+| `none` | No voice: music, SFX, ambience | Speaking views are an error — use `broll-silent.*`; `clip_audio` on in the EDL warns |
+
+The storyboard flow assumes `dialogue`; the validator warns otherwise.
+
 ## Manual generation (every generator except Runway)
 
 1. `scene-prompter` writes `03_prompts/scene-XXX.prompt.json` and renders it with

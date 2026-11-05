@@ -20,7 +20,7 @@ Principles:
 - Cast/world descriptors are fixed strings — write them once, carefully. One master keyframe
   per character, reused for every take. Fill the template fields too (`noun`, `pronoun`,
   `wardrobe`, `speaker`, `role`, `voice`, `voice_as`, `avoid`; location `keep`) — the prompt
-  templates paste them verbatim. Copy `format.generator` from `state.json`.
+  templates paste them verbatim. Copy `format.generator` and `format.audio` from `state.json`.
 - Define the ground (the plate b-roll sits on) so the film never alternates room/void.
 - Pick motion tokens by name from `docs/remotion-broll.md` and record them in `theme.motion`.
 - The VO is final at the end of this stage: one source, word-aligned into `vo.words.json`,

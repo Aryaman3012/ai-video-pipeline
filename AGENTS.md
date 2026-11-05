@@ -160,8 +160,23 @@ without a cutaway/overlay. Full rules in [docs/editing-principles.md](docs/editi
 
 ## Starting a project
 
+Every new video starts with the **intake questions**, asked together before anything is
+created (use the question tool; don't infer answers from an earlier video):
+
+1. **Audio** — does this video have a voice, and where does it come from?
+   - `dialogue`: the generated clips speak the lines (lip-synced, e.g. Veo podcast/presenter).
+   - `voiceover`: a separate VO track over the clips (clips are silent picture or ambience).
+   - `none`: no voice at all (music, SFX, ambience, graphics).
+2. **Generator + model** — `runway` | `veo` | `other`, and the model (e.g. "Veo 3.1 Fast").
+   `dialogue` needs a generator that speaks (not Runway).
+3. **Flow** — `storyboard` (a speaking person + Remotion graphics; needs `dialogue`) or `film`
+   (scene-by-scene A-roll/B-roll; any audio).
+4. **Format** — platform, aspect ratio, target runtime (fps defaults to 24).
+
+Record the answers when creating the project; stage ⓪ fills in anything still missing.
+
 ```bash
-./tools/new-project.sh my-video          # copies projects/_template → projects/my-video
+./tools/new-project.sh my-video --flow film --generator veo --model "Veo 3.1 Fast" --audio voiceover
 # put the script in projects/my-video/00_script/script.md (and VO audio if you have it)
 ```
 Then run the stages in order, or use the `/produce my-video` command.

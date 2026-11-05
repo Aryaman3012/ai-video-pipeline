@@ -9,7 +9,8 @@
     "generator": {
       "name": "veo",
       "model": "Veo 3.1 Fast"
-    }
+    },
+    "audio": "dialogue"
   },
   "current_scene": "scene-001",
   "current_take": 1,

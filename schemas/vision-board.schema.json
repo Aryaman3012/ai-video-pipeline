@@ -89,6 +89,14 @@
         },
         "generator": {
           "$ref": "#/$defs/generator"
+        },
+        "audio": {
+          "enum": [
+            "dialogue",
+            "voiceover",
+            "none"
+          ],
+          "description": "Asked when the video is created: dialogue = the generated clips speak the lines; voiceover = a separate VO track over the clips; none = no voice (music / SFX / ambience only)"
         }
       }
     },

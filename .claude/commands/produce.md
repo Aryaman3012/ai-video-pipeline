@@ -5,8 +5,13 @@ argument-hint: <project-slug>
 
 Produce the video for project `$ARGUMENTS` following `AGENTS.md`.
 
-1. If `projects/$ARGUMENTS` doesn't exist, run `./tools/new-project.sh $ARGUMENTS` and ask the
-   user for the script (save it to `00_script/script.md`). Stop until it exists.
+1. If `projects/$ARGUMENTS` doesn't exist, it's a new video: **ask the intake questions** from
+   `AGENTS.md → Starting a project` first — audio (`dialogue` | `voiceover` | `none`),
+   generator + model, flow, and format — all in one round, every time. Then run
+   `./tools/new-project.sh $ARGUMENTS --flow <flow> --generator <name> --model "<model>" --audio <audio>`,
+   ask for the script (save it to `00_script/script.md`) and stop until it exists.
+   If an existing project's `state.json` has no `format.audio` or `format.generator`, ask those
+   questions before dispatching anything.
 2. Read `projects/$ARGUMENTS/state.json` and the last entry of `log.md`. Resume from `stage`.
    If the validator reports the stage is stale against the artifacts on disk, reconcile
    `state.json` with the user before dispatching anything.

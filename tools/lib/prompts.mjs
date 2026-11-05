@@ -23,6 +23,26 @@ export function projectGenerator(state, vision) {
   return { name, model: model ?? base.default_model, profile: { ...base, ...overrides } };
 }
 
+export const AUDIO_MODES = ["dialogue", "voiceover", "none"];
+
+/**
+ * The project's audio answer (format.audio, asked when the video is created) against the
+ * generator and a scene's view. dialogue = the clips speak the lines; voiceover = a separate
+ * VO track over the clips; none = no voice at all (music / SFX / ambience only).
+ */
+export function audioIssues({ audio, generator, view }) {
+  const errors = [], warnings = [];
+  if (audio == null) return { errors, warnings };
+  if (!AUDIO_MODES.includes(audio)) errors.push(`format.audio "${audio}" — expected ${AUDIO_MODES.join(" | ")}`);
+  // Project-level check: only when no view is given, so it is reported once, not per scene.
+  if (!view && audio === "dialogue" && !generator.profile.dialogue)
+    errors.push(`format.audio is dialogue but ${generator.name} doesn't generate speech — choose voiceover (VO track + lip-sync) or a generator that speaks`);
+  const speaks = view ? loadTemplate(view).meta.speaks : false;
+  if (speaks && audio === "none") errors.push(`${view} is a speaking view, but this video has no voice (format.audio: none) — use a broll-silent view`);
+  if (speaks && audio === "voiceover") warnings.push(`${view} under a separate VO: the clip's own sound is discarded and the mouth must be lip-synced to the VO track`);
+  return { errors, warnings };
+}
+
 export const VIEWS = fs.readdirSync(TPL).filter((f) => f.endsWith(".md") && f !== "README.md").map((f) => f.slice(0, -3));
 
 const cache = new Map();

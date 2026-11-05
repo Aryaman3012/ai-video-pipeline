@@ -16,7 +16,8 @@ Outputs: `00_script/script-annotated.md`, `00_script/audit.md`, format recorded 
 Principles:
 - Record the format lock first (platform, aspect ratio, fps, runtime, cutdowns, and the
   **generator** — ask the user: `runway` | `veo` | `other` plus the model, e.g. "Veo 3.1 Fast",
-  recorded as `format.generator: {name, model}`). Non-16:9 makes Runway A-roll image-to-video,
+  recorded as `format.generator: {name, model}`) and the **audio** — `dialogue` | `voiceover` |
+  `none`, recorded as `format.audio`. Both are usually set at intake; ask for whichever is missing. Non-16:9 makes Runway A-roll image-to-video,
   and the generator decides clip length, phrasing and whether the model speaks the lines —
   every downstream decision depends on both.
 - Route every line: seeable (A-roll candidate) or sayable (B-roll candidate).

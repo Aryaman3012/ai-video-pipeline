@@ -18,6 +18,10 @@ Ask the user (or read from the brief) and record in `state.json → "format"`:
   whether the model speaks the lines, and whether the pipeline generates or only writes
   prompts ([generators.md](../generators.md)). Default when the user has no preference: ask —
   don't assume Runway.
+- **Audio** — `dialogue` (the clips speak the lines) | `voiceover` (separate VO track over the
+  clips) | `none` (no voice). Recorded as `format.audio`. Usually answered at intake (AGENTS.md →
+  Starting a project); ask now if it's missing. `dialogue` needs a generator that speaks;
+  `none` rules out speaking views; `voiceover` with a talking shot needs a lip-sync step.
 - **fps** (default 24) and **target runtime**.
 - Any secondary cutdown (e.g. 9:16 primary + 1:1 cutdown from the same EDL).
 

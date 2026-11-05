@@ -21,7 +21,8 @@
     "generator": {
       "name": "veo",
       "model": "Veo 3.1 Fast"
-    }
+    },
+    "audio": "dialogue"
   },
   "look": {
     "visual_style": "cinematic podcast, warm dark studio",

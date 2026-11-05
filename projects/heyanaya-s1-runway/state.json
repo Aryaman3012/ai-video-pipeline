@@ -9,7 +9,8 @@
     "generator": {
       "name": "runway",
       "model": "gen4.5"
-    }
+    },
+    "audio": "voiceover"
   },
   "current_scene": "scene-001",
   "current_take": 1,

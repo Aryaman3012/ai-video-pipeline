@@ -21,7 +21,8 @@
     "generator": {
       "name": "runway",
       "model": "gen4.5"
-    }
+    },
+    "audio": "voiceover"
   },
   "look": {
     "visual_style": "cinematic podcast, warm dark studio",

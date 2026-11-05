@@ -6,7 +6,7 @@
 // copy-paste-ready 03_prompts/<scene>.prompt.md. Never generates anything.
 import fs from "node:fs";
 import path from "node:path";
-import { ROOT, projectGenerator, renderPrompt, promptMarkdown, sceneSlots } from "./lib/prompts.mjs";
+import { ROOT, projectGenerator, renderPrompt, promptMarkdown, sceneSlots, audioIssues } from "./lib/prompts.mjs";
 
 const [slug, sceneId, ...rest] = process.argv.slice(2);
 if (!slug || !sceneId) { console.error("usage: node tools/render-prompt.mjs <slug> <scene-id> [--take N]"); process.exit(2); }
@@ -25,6 +25,11 @@ const view = p.view ?? scene?.view;
 if (!view) { console.error(`${sceneId}: no view on the prompt or the breakdown scene`); process.exit(1); }
 if (scene?.view && p.view && scene.view !== p.view) { console.error(`${sceneId}: prompt view ${p.view} ≠ breakdown view ${scene.view}`); process.exit(1); }
 
+const audio = state.format?.audio ?? vision.format?.audio;
+const ai = [audioIssues({ audio, generator: gen }), audioIssues({ audio, generator: gen, view })]
+  .reduce((a, b) => ({ errors: [...a.errors, ...b.errors], warnings: [...a.warnings, ...b.warnings] }));
+if (ai.errors.length) { for (const e of ai.errors) console.error(`✗ ${sceneId}: ${e}`); process.exit(1); }
+
 const n = opt("--take") ? Number(opt("--take")) : Math.max(...p.takes.map((t) => t.take));
 const take = p.takes.find((t) => t.take === n);
 if (!take) { console.error(`${pf}: no take ${n}`); process.exit(1); }
@@ -36,6 +41,7 @@ let out;
 try { out = renderPrompt({ view, generator: gen, slots, vision, duration_s, aspect }); }
 catch (e) { console.error(`✗ ${sceneId} take ${n}: ${e.message}`); process.exit(1); }
 
+out.warnings.unshift(...ai.warnings);
 Object.assign(take, {
   model: take.model ?? gen.model,
   mode: out.mode,

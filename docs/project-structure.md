@@ -52,7 +52,7 @@ ai-video-pipeline/
   "slug": "clinic-explainer",
   "stage": "prompting",
   "format": { "platform": "reels", "aspect_ratio": "9:16", "fps": 24, "runtime_target_s": 45,
-              "generator": { "name": "veo", "model": "Veo 3.1 Fast" } },
+              "generator": { "name": "veo", "model": "Veo 3.1 Fast" }, "audio": "dialogue" },
   "current_scene": "scene-004",
   "current_take": 2,
   "approved": { "audit": true, "vision": true, "breakdown": true, "broll": false, "final": false },
@@ -66,7 +66,8 @@ ai-video-pipeline/
 `waivers` (optional) — `{ "<stage>": "<reason>" }`: the only way past a skipped stage; the
 validator errors otherwise.
 `format.generator.name` ∈ `runway | veo | other` ([generators.md](generators.md)); absent means
-`runway`. It must match `vision-board.json → format.generator`.
+`runway`. `format.audio` ∈ `dialogue | voiceover | none` (asked at intake). Both must match
+`vision-board.json → format`.
 Any agent resuming work reads `state.json` first, then the last entry in `log.md`.
 The validator cross-checks `stage` against the artifacts on disk (rule 8) — an EDL or
 renders with an earlier stage is an **error**, so a stale state cannot go unnoticed.
